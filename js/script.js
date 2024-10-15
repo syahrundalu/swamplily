@@ -68,11 +68,12 @@
           clickable: false, // Clickable pagination bullets
       },
       effect: 'fade', // Set effect to fade
+      speed : 1000,
       fadeEffect: {
         crossFade: true, // Cross fade effect
      },
       autoplay: {
-          delay: 5000, // Delay between transitions (in milliseconds)
+          delay: 7000, // Delay between transitions (in milliseconds)
           disableOnInteraction: false, // Continue autoplay after user interactions
       },
       loop: true, // Enable looping of slides
