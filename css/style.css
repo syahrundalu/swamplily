@@ -485,11 +485,12 @@ a:hover {
 }
 
 .about .left-section {
-    flex: 1; /* Left section takes 2 parts of the total */
+    flex: 1.2; /* Left section takes 2 parts of the total */
     position: relative; /* Position relative for absolute positioning of slides */
     overflow: hidden; /* Hide overflowing slides */
     margin: 0; /* Remove left space */
     padding: 0; /* Ensure no padding */
+    
 }
 
 .about .slideshow-container {
@@ -503,10 +504,10 @@ a:hover {
     margin: 0;
 }
 
- .about .mySlides img {
-    width: 100%; /* Make images full width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Prevent extra space below the image */
+ .about .swiper-slide img {
+    width: 110%;         /* Full width of the slide */
+    height: 100vh;      /* Set a fixed height */
+    object-fit: cover;  /* Maintain aspect ratio and cover the space */
 
 }
 
@@ -558,7 +559,7 @@ a:hover {
     text-decoration: none;
     color: #000;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
 }
 
  .about .content h1 {
@@ -577,4 +578,11 @@ a:hover {
     text-align: right;
     font-size: 14px;
     color: #999;
+}
+
+.about .line {
+    width: 50%; /* Adjust the width as needed */
+    height: 1px; /* Thickness of the line */
+    background-color: #333; /* Color of the line */
+    margin-top: 20px; /* Space between the paragraph and the line */
 }
