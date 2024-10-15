@@ -59,6 +59,25 @@
 
     }); // End of a document ready
 
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1, // Number of slides per view
+      spaceBetween: 0, // Space between slides
+      simulateTouch: false, // Nonaktifkan drag
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: false, // Clickable pagination bullets
+      },
+      effect: 'fade', // Set effect to fade
+      fadeEffect: {
+        crossFade: true, // Cross fade effect
+     },
+      autoplay: {
+          delay: 5000, // Delay between transitions (in milliseconds)
+          disableOnInteraction: false, // Continue autoplay after user interactions
+      },
+      loop: true, // Enable looping of slides
+  });
+
   // init Isotope
   var initIsotope = function() {
     
@@ -132,7 +151,7 @@
     html.classList.add('ss-preload');
 
     // Set the delay for the preloader in milliseconds (e.g., 3000 for 3 seconds)
-    const preloaderDelay = 5000; // 3 seconds
+    const preloaderDelay = 1000; // 3 seconds
 
     window.addEventListener('load', function() {
         setTimeout(() => {  // Add a timer for preloader
@@ -296,3 +315,4 @@ const ssMobileMenu = function() {
   })();
 
 })(document.documentElement);
+

@@ -433,3 +433,148 @@ a:hover {
 .nav-item {
     margin-left: 15px;
 }
+
+/* Parent container styles */
+.banner .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content to the bottom */
+    height: 120vh; /* Full viewport height */
+  }
+  
+  /* Styling for the link-landing */
+  .link-landing ul {
+    display: flex;
+    justify-content: center; /* Center the items */
+    padding: 0;
+    margin: 0;
+    gap: 100px;
+    list-style-type: none; /* Remove bullets */
+    position: relative; /* Make each <li> positioned */
+    z-index: 99; /* Default z-index */
+  }
+  
+  .link-landing ul li {
+    margin-right: 20px; /* Add space between items */
+    font-size: 24px;
+  }
+
+  .link-landing ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #EBE7CA; /* Set the link color */
+    font-weight: 400; /* Default font weight */
+  }
+  
+  /* Add hover effect for <li> elements */
+  .link-landing ul li a:hover {
+    font-weight: 700; /* Increase font weight on hover */
+  }
+  
+  .link-landing ul li:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+  }
+
+
+  /* About Page */
+  .about {
+    display: flex;
+    height: 100vh; /* Full viewport height for the sections */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about .left-section {
+    flex: 1; /* Left section takes 2 parts of the total */
+    position: relative; /* Position relative for absolute positioning of slides */
+    overflow: hidden; /* Hide overflowing slides */
+    margin: 0; /* Remove left space */
+    padding: 0; /* Ensure no padding */
+}
+
+.about .slideshow-container {
+    position: relative;
+    max-width: 100%; /* Ensure it fits the container */
+    margin: auto;
+}
+
+ .about .mySlides {
+    display: none; /* Hide all slides by default */
+    margin: 0;
+}
+
+ .about .mySlides img {
+    width: 100%; /* Make images full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent extra space below the image */
+
+}
+
+ .about.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+ .about.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background on hover */
+}
+
+.about .fade {
+    animation: fade 1.5s ease; /* Animation for sliding effect */
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Right section styles can remain the same */
+.about .right-section {
+    flex: 1; /* Right section takes 1 part of the total */
+    background-color: #F5F3D7; /* Light beige background */
+    padding: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ .about .logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ .about .logo {
+    height: 50px; /* Adjust as needed */
+}
+
+ .about .nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+ .about .nav li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+ .about .content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ .about .content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+ .about footer {
+    text-align: right;
+    font-size: 14px;
+    color: #999;
+}

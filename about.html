@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Swamplily</title>
+  <title>About - Swamplily</title>
   <!-- Required meta tags -->
 
   <script>
@@ -73,49 +73,58 @@
       </div>
   </header> -->
   
-
-      <section>
-        <div class="banner" id="blurred-section">
-  <div class="text-content text-white d-flex justify-content-center align-content-center" id="bannerbackground">  
-    <img src="images/logodancing.gif" alt="" class="logodancing" id="logodancing" width="90%">
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-lg-12">
-      <div class="d-flex gap-4 align-items-center">
-        
-  
-      </div>
+  <div class="about">
+    <div class="left-section">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/illustration-2.jpg" alt="Slide 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/illustration-1.jpg" alt="Slide 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/illustration-3.jpg" alt="Slide 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/illustration-4.jpg" alt="Slide 4">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/illustration-5.jpg" alt="Slide 5">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+          
+        </div>
     </div>
-  </div>
-  <div class="container link-landing">
-    <div class="row">
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="shop.html">Shop</a></li>
-      </ul>
+    <div class="right-section">
+        <div class="logo-nav">
+            <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo"></a>
+            <ul class="nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#orders">Orders</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>About</h1>
+            <p>
+                Initially grew from a deep interest in the botanical world and storytelling, Swamp Lily exists as a medium to connect the two. 
+                We believe that flowers and plants, like any other piece of nature, possess a raw, delicate, and sentimental quality which 
+                becomes our main perspective in creating. Our creative approach is mostly inspired by the idea of everything in between—a mix 
+                of something quirky, unexpected, and precious.
+            </p>
+        </div>
+        <footer>
+            <p>2024© swampilly. all rights reserved</p>
+        </footer>
     </div>
-  </div>
+</div>
 
   
-</div>      
-        <script>
-          const bannerbackground = document.getElementById('bannerbackground');
-          const logodancing = document.getElementById('logodancing');
-      
-          function parallaxEffect() {
-            let value = window.scrollY;
-            bannerbackground.style.transform = `translateY(${value * 0.4}px)`;
-            logodancing.style.transform = `translateY(${value * 0.4}px)`;
-            logodancing.style.opacity = 1 - value * 0.001;
-          }
-      
-          window.addEventListener('scroll', function(){
-            requestAnimationFrame(parallaxEffect);
-          });
-        </script>
-  </section>
+  
+  
+
       
 
 
