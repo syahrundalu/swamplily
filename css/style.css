@@ -1,8 +1,15 @@
 /* fonts family */
 
 :root {
-    --body-font : "Work Sans", sans-serif;
-    --bs-btn-font-family : "Work Sans", sans-serif;
+    --body-font : "roboto", sans-serif;
+    --bs-btn-font-family : "roboto", sans-serif;
+}
+
+@font-face {
+    font-family: 'orangesquash';
+    src: url('../font/orangesquash.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* fonts color */
@@ -108,7 +115,7 @@ body {
     font-family: var(--body-font);
     scroll-behavior: smooth;
     overflow-x: hidden;
-    /* background-color: #EBE7CA; */
+    background-color: #EBE7CA;
     margin: 0; /* Ensure no margin around the body */
     padding: 0; /* Ensure no padding around the body */
 }
@@ -539,27 +546,32 @@ a:hover {
     justify-content: space-between;
 }
 
- .about .logo-nav {
+.logo-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 100px;
 }
 
- .about .logo {
+.logo {
     height: 50px; /* Adjust as needed */
 }
 
- .about .nav {
+.nav {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
- .about .nav li a {
+.nav li a {
     text-decoration: none;
-    color: #000;
+    color: #40503D;
     font-weight: 600;
     font-size: 14px;
+}
+
+.nav li a:hover {
+    font-weight: 900;
 }
 
  .about .content h1 {
@@ -585,4 +597,108 @@ a:hover {
     height: 1px; /* Thickness of the line */
     background-color: #333; /* Color of the line */
     margin-top: 20px; /* Space between the paragraph and the line */
+}
+
+.about .content img {
+    width: 25%;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5rem;
+}
+
+.arrangement-text {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.product-section {
+    padding: 50px 0;
+}
+
+.product-card {
+    text-align: left; /* Aligns all text within the product-card to the left */
+    padding: 20px; /* Optional: Adds some padding around the product card for spacing */
+}
+
+.product-card img {
+    width: 100%;
+    height: 700px; /* Set your desired fixed height */
+    object-fit: cover; /* Ensures the image fills the area while keeping aspect ratio */
+}
+
+.product-card h3 {
+    margin-top: 50px;
+}
+
+
+.terms-section {
+    background-color: #4f5b49;
+    color: #EBE7CA;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact-section {
+    padding: 50px 100px;
+}
+
+.form-control {
+    height: 60px;
+    background-color: #fff !important;
+}
+
+.form-control:nth-of-type(3) {
+    height: 150px;
+}
+
+.form-control, .btn {
+    width: 100%;
+    height: 60px;
+    border-radius:0px;
+    background-color: #40503D;
+}
+
+.form-control, .btn:hover {
+    background-color: #242a23;
+}
+
+.contact-section form {
+    margin-top: 100px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+}
+
+.shop img.header {
+    display: block;
+    margin: 0 auto; /* This ensures the image is centered as a block element */
+    max-width: 30%; /* Make the image responsive */
+    height: auto;    
+}
+
+.shop header p {
+    padding: 0px 100px;
+}
+
+.shop {
+    padding-top: 100px;
+}
+
+.contact-section img {
+    width: 100%;
+    height: 700px; /* Set your desired fixed height */
+    object-fit: cover; /* Ensures the image fills the area while keeping aspect ratio */
 }
