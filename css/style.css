@@ -399,47 +399,6 @@ a:hover {
     transition: all 0.6s 0.9s ease-in-out;
 }
 
-/* Navbar styles */
-.navbar {
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-    z-index: 1000; /* Lower than preloader but above other content */
-}
-
-.navbar.transparent {
-    background-color: transparent;
-    color: #EBE7CA;
-}
-
-.navbar.scrolled {
-    background-color: transparent;
-    color: #EBE7CA;
-}
-
-.nav-link {
-    color: inherit; /* Use inherited color from navbar */
-}
-
-.nav-link:hover {
-    text-decoration: underline; /* Optional hover effect */
-}
-
-/* Optional styles for logo */
-.navbar .navbar-brand img {
-    width: 10%;
-    height: auto;
-    margin-left: 20px;
-    filter: brightness(0) invert(1); /* Make the logo white if it's dark */
-    transition: filter 0.3s ease-in-out; /* Ensure smooth transition */
-}
-
-.navbar.scrolled .navbar-brand img {
-    filter: none; /* Remove filter when scrolling */
-}
-
-/* Ensure navbar items have space between them */
-.nav-item {
-    margin-left: 15px;
-}
 
 /* Parent container styles */
 .banner .container {
@@ -545,32 +504,49 @@ a:hover {
     justify-content: space-between;
 }
 
-.logo-nav {
+.about .logo-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 100px;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.shop .logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.work .logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .logo {
-    height: 50px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
 }
 
 .nav {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
 
 .nav li a {
     text-decoration: none;
     color: #40503D;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
 }
 
 .nav li a:hover {
-    font-weight: 900;
+    text-decoration: underline;
 }
 
  .about .content h1 {
@@ -585,7 +561,7 @@ a:hover {
     color: #333;
 }
 
- .about footer {
+ footer {
     text-align: right;
     font-size: 14px;
     color: #999;
@@ -612,6 +588,12 @@ a:hover {
 .arrangement-text {
     text-align: center;
     margin: 20px 0;
+}
+
+.styling-text {
+    text-align: center;
+    margin: 50px 0;
+    padding: 0px 100px;
 }
 
 .product-section {
@@ -647,21 +629,23 @@ a:hover {
 
 .form-control {
     height: 60px;
-    background-color: #fff !important;
+    background-color: white;
+    border-radius: 0px;
 }
 
-.shop .contact-section .form-control:nth-child(3) {
-    height: 150px;
+.shop .contact-section .custom-height{
+    height: 200px;
 }
 
-.form-control, .btn {
+
+.contact-section .btn {
     width: 100%;
     height: 60px;
     border-radius:0px;
     background-color: #40503D;
 }
 
-.form-control, .btn:hover {
+.contact-section .btn:hover {
     background-color: #242a23;
 }
 
@@ -696,8 +680,67 @@ a:hover {
     padding-top: 100px;
 }
 
+.shop .form-control::placeholder {
+    color: #9a9a9a;
+}
+
+
 .contact-section img {
     width: 100%;
     height: 700px; /* Set your desired fixed height */
     object-fit: cover; /* Ensures the image fills the area while keeping aspect ratio */
+}
+
+.signature-next, .signature-prev, .local-next, .local-prev{
+    color: #fff;    
+}
+
+/* WORK PAGE CONTENT */
+
+.work {
+    overflow-y: hidden;
+}
+/* Main content */
+.main-content {
+    text-align: left;
+    margin: 100px 100px;
+}
+
+.main-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-content li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.main-content a {
+    text-decoration: none;
+    color: #242a23;
+}
+
+.main-content a:hover {
+    text-decoration: underline;
+}
+
+/* Decorative Images */
+.flower-img {
+    position: absolute;
+    z-index: -1; /* Moves the images behind the main content */
+    
+}
+
+.flower-left {
+    top: 200px; /* Adjust the vertical position */
+    left: -400px; /* Adjust the horizontal position */
+    width: 800px;
+}
+
+.flower-right {
+    top: 50px; /* Adjust the vertical position */
+    right: 0px; /* Adjust the horizontal position */
+    width: 800px;
 }

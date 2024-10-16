@@ -59,7 +59,7 @@
 
     }); // End of a document ready
 
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.about-swiper-container', {
       slidesPerView: 1, // Number of slides per view
       spaceBetween: 0, // Space between slides
       simulateTouch: false, // Nonaktifkan drag
@@ -91,6 +91,7 @@
       nextEl: '.signature-next',
       prevEl: '.signature-prev',
     },
+    loop: true, // Enable looping of slides
 });
 
 // Initialize Swiper for Local
@@ -106,6 +107,7 @@ var localSwiper = new Swiper('.local-swiper', {
       nextEl: '.local-next',
       prevEl: '.local-prev',
     },
+    loop: true, // Enable looping of slides
 });
 
   // init Isotope
@@ -346,3 +348,11 @@ const ssMobileMenu = function() {
 
 })(document.documentElement);
 
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+  var emailInput = document.getElementById('emailInput');
+  if (!emailInput.value.includes('@')) {
+      emailInput.setCustomValidity('Please include an "@" in the email address.');
+  } else {
+      emailInput.setCustomValidity(''); // Clear custom error message if valid
+  }
+});

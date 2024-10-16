@@ -52,10 +52,11 @@
         <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo"></a>
         <ul class="nav">
             <li><a href="about.html">About</a></li>
-            <li><a href="#works">Works</a></li>
+            <li><a href="work.html">Works</a></li>
             <li><a href="shop.html">Shop</a></li>
         </ul>
     </div> 
+    
     <!-- Header Section -->
     <header class="container">
         <img class="header" src="images/header/arrangement.png" alt="">
@@ -147,18 +148,24 @@
 <section class="contact-section container">
     <img class="header" src="images/header/styling.png" alt="">
 
-    <form>
+    <p class="styling-text">
+        Our bespoke individual floral arrangements come in bouquet and vase formats where each one is created 
+        with a careful selection of flowers to help you deliver your story. No two similar arrangements will exist, 
+        as the flowers may vary according to their seasonality.
+    </p>
+
+    <form id="emailForm">
         <div class="mb-3">
             <input type="text" class="form-control" placeholder="Full Name" required>
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Email" required>
+            <input type="email" id="emailInput" class="form-control" placeholder="Email" required>
         </div>
         <div class="mb-3">
             <input type="text" class="form-control" placeholder="Subject" required>
         </div>
         <div class="mb-3">
-            <textarea class="form-control custom-height" placeholder="Your Message" required height="150px"></textarea>
+            <textarea class="form-control custom-height" placeholder="Your Message" required></textarea>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-dark">Send Message</button>
