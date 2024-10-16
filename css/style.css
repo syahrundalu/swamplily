@@ -759,7 +759,7 @@ a:hover {
     width: 90%; /* Use a percentage of the viewport width */
     max-width: 600px; /* Set a max width */
     height: auto; /* Set height to auto to fit the image */
-    max-height: 90%; /* Set a max height to prevent overflow */
+    max-height: calc(90vw * (9 / 16)); /* Max height based on 16:9 ratio */
     transform: translate(-50%, -50%); /* Adjust for centering */
     background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
     padding: 0; /* No padding to let image size determine modal size */
@@ -772,14 +772,17 @@ a:hover {
     display: flex; /* Flexbox for centering the image */
     align-items: center; /* Center the image vertically */
     justify-content: center; /* Center the image horizontally */
-    height: 100%; /* Make the content area full height */
+    width: 100%; /* Full width of modal */
+    height: 100%; /* Full height of modal */
 }
 
 .modal-content img {
-    max-width: 100%; /* Set max-width to 100% of the modal */
-    max-height: 100%; /* Set max-height to 100% of the modal */
-    object-fit: contain; /* Maintain aspect ratio */
+    height: 100%; /* Fill the height of the modal */
+    width: auto; /* Adjust width automatically to maintain aspect ratio */
+    max-width: none; /* Allow the image to expand beyond 100% of modal width */
+    object-fit: contain; /* Contain the image within the modal */
 }
+
 
 
 .close-btn {

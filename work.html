@@ -107,6 +107,9 @@ const nextBtn = document.getElementById('nextBtn');
 let currentImageIndex = 0;
 let imagesArray = [];
 
+// Aspect ratio (height:width)
+const aspectRatio = 16 / 9; // Change this to your desired ratio for vertical (e.g., 3/4 for 3:4)
+
 // Function to show the modal with images
 document.querySelectorAll('.main-content a').forEach(link => {
     link.addEventListener('click', function (e) {
@@ -119,7 +122,7 @@ document.querySelectorAll('.main-content a').forEach(link => {
         // Show the first image
         modalImage.src = imagesArray[currentImageIndex];
 
-        // Randomly position the modal within the viewport
+        // Randomly position the modal within the viewport and set random size
         positionModal();
 
         modal.style.display = 'block'; // Show the modal
@@ -150,19 +153,36 @@ window.onclick = function (event) {
     }
 }
 
-// Function to randomly position the modal within the viewport
+// Close modal with Escape key
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') { // Check if the pressed key is "Escape"
+        modal.style.display = 'none'; // Close the modal
+    }
+});
+
+// Function to randomly position the modal within the viewport and set random size
 function positionModal() {
     // Get the viewport dimensions
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Get the modal dimensions
-    const modalWidth = modal.offsetWidth;
-    const modalHeight = modal.offsetHeight;
+    // Generate random width and calculate height based on the aspect ratio
+    let randomHeight = Math.random() * (viewportHeight * 0.8) + 200; // Between 200px and 80% of viewport height
+    let randomWidth = randomHeight / aspectRatio; // Calculate width based on aspect ratio
+
+    // Ensure the modal width does not exceed the viewport width
+    if (randomWidth > viewportWidth * 0.2) {
+        randomWidth = viewportWidth * 0.2; // Limit to 80% of viewport width
+        randomHeight = randomWidth * aspectRatio; // Recalculate height to maintain aspect ratio
+    }
+
+    // Set the modal's size
+    modal.style.width = `${randomWidth}px`;
+    modal.style.height = `${randomHeight}px`;
 
     // Calculate random top and left positions ensuring the modal stays within the viewport
-    const randomTop = Math.random() * (viewportHeight - modalHeight - 20) + 10; // 20 is for padding
-    const randomLeft = Math.random() * (viewportWidth - modalWidth - 20) + 10; // 20 is for padding
+    const randomTop = Math.random() * (viewportHeight - randomHeight - 5) + 5; // 20 is for padding
+    const randomLeft = Math.random() * (viewportWidth - randomWidth - 5) + 5; // 20 is for padding
 
     // Set the modal's position
     modal.style.top = `${randomTop}px`;
