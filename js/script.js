@@ -356,3 +356,4 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
       emailInput.setCustomValidity(''); // Clear custom error message if valid
   }
 });
+

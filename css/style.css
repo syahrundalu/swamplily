@@ -699,11 +699,16 @@ a:hover {
 
 .work {
     overflow-y: hidden;
+    height: 100vh;
 }
 /* Main content */
 .main-content {
     text-align: left;
-    margin: 100px 100px;
+    margin: 50px 100px;
+}
+
+.work footer {
+    margin-top: 180px;
 }
 
 .main-content ul {
@@ -713,7 +718,7 @@ a:hover {
 }
 
 .main-content li {
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -743,4 +748,71 @@ a:hover {
     top: 50px; /* Adjust the vertical position */
     right: 0px; /* Adjust the horizontal position */
     width: 800px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    width: 90%; /* Use a percentage of the viewport width */
+    max-width: 600px; /* Set a max width */
+    height: auto; /* Set height to auto to fit the image */
+    max-height: 90%; /* Set a max height to prevent overflow */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    padding: 0; /* No padding to let image size determine modal size */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+    box-sizing: border-box; /* Include padding and border in width and height */
+}
+
+.modal-content {
+    position: relative; /* Position relative to modal */
+    display: flex; /* Flexbox for centering the image */
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+    height: 100%; /* Make the content area full height */
+}
+
+.modal-content img {
+    max-width: 100%; /* Set max-width to 100% of the modal */
+    max-height: 100%; /* Set max-height to 100% of the modal */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0px;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+}
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
