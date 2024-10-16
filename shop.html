@@ -72,7 +72,27 @@
         <!-- Product 1: Signature -->
         <div class="col-md-6">
             <div class="product-card">
-                <img src="images/about/about-3.JPEG" alt="Signature Arrangement" class="img-fluid">
+                <!-- Swiper Container for Signature -->
+                <div class="swiper-container signature-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/about/about-3.JPEG" alt="Signature Arrangement" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/about/about-1.JPG" alt="Signature Arrangement 2" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/about/about-2.jpg" alt="Signature Arrangement" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/about/about-5.jpeg" alt="Signature Arrangement 2" class="img-fluid">
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                 
+                    <div class="swiper-button-next signature-next"></div>
+                    <div class="swiper-button-prev signature-prev"></div>
+                </div>
                 <h3>Signature</h3>
                 <p>Mix and match! These arrangements are composed of both imported and local floral ingredients.</p>
                 <p>Bouquet starts from IDR 775k<br>Vase starts from IDR 900k</p>
@@ -82,7 +102,28 @@
         <!-- Product 2: Local -->
         <div class="col-md-6">
             <div class="product-card">
-                <img src="images/about/about-4.JPG" alt="Local Arrangement" class="img-fluid">
+                <!-- Swiper Container for Local -->
+                <div class="swiper-container local-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/about/about-4.JPG" alt="Local Arrangement" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/about/about-5.jpeg" alt="Local Arrangement 2" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/about/about-1.JPG" alt="Local Arrangement" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/about/about-2.jpg" alt="Local Arrangement 2" class="img-fluid">
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                   
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next local-next"></div>
+                    <div class="swiper-button-prev local-prev"></div>
+                </div>
                 <h3>Local</h3>
                 <p>Mix and match! These arrangements are composed of both imported and local floral ingredients.</p>
                 <p>Bouquet starts from IDR 775k<br>Vase starts from IDR 900k</p>
@@ -90,6 +131,7 @@
         </div>
     </div>
 </section>
+
 
 </div>
 
@@ -116,7 +158,7 @@
             <input type="text" class="form-control" placeholder="Subject" required>
         </div>
         <div class="mb-3">
-            <textarea class="form-control custom-height" placeholder="Your Message" required></textarea>
+            <textarea class="form-control custom-height" placeholder="Your Message" required height="150px"></textarea>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-dark">Send Message</button>

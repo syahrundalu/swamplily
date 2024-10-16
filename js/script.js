@@ -79,6 +79,35 @@
       loop: true, // Enable looping of slides
   });
 
+  var signatureSwiper = new Swiper('.signature-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    autoplay : false,
+    navigation: {
+      nextEl: '.signature-next',
+      prevEl: '.signature-prev',
+    },
+});
+
+// Initialize Swiper for Local
+var localSwiper = new Swiper('.local-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoplay : false,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+      nextEl: '.local-next',
+      prevEl: '.local-prev',
+    },
+});
+
   // init Isotope
   var initIsotope = function() {
     

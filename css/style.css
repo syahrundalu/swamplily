@@ -515,7 +515,6 @@ a:hover {
     width: 110%;         /* Full width of the slide */
     height: 100vh;      /* Set a fixed height */
     object-fit: cover;  /* Maintain aspect ratio and cover the space */
-
 }
 
  .about.next {
@@ -651,7 +650,7 @@ a:hover {
     background-color: #fff !important;
 }
 
-.form-control:nth-of-type(3) {
+.shop .contact-section .form-control:nth-child(3) {
     height: 150px;
 }
 
