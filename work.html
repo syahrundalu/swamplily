@@ -106,14 +106,43 @@ const nextBtn = document.getElementById('nextBtn');
 
 let currentImageIndex = 0;
 let imagesArray = [];
+let isModalPinned = false; // This flag will help to "pin" the modal when clicked
 
 // Aspect ratio (height:width)
-const aspectRatio = 16 / 9; // Change this to your desired ratio for vertical (e.g., 3/4 for 3:4)
+const aspectRatio = 16 / 9; // Change this to your desired ratio
 
 // Function to show the modal with images
 document.querySelectorAll('.main-content a').forEach(link => {
+    // Show modal on hover
+    link.addEventListener('mouseover', function (e) {
+        if (!isModalPinned) { // Only show on hover if it's not pinned
+            e.preventDefault(); // Prevent default anchor click behavior
+
+            // Get images from data attribute
+            imagesArray = JSON.parse(this.getAttribute('data-images'));
+            currentImageIndex = 0; // Reset to first image
+
+            // Show the first image
+            modalImage.src = imagesArray[currentImageIndex];
+
+            // Position the modal to the right of the hovered link
+            positionModal(this);
+
+            modal.style.display = 'block'; // Show the modal
+        }
+    });
+
+    // Hide the modal when the user moves the mouse away (only if not pinned)
+    link.addEventListener('mouseout', function () {
+        if (!isModalPinned) {
+            modal.style.display = 'none'; // Hide the modal
+        }
+    });
+
+    // Pin the modal when clicked
     link.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent default anchor click behavior
+        e.preventDefault();
+        isModalPinned = true; // Pin the modal so it stays open on click
 
         // Get images from data attribute
         imagesArray = JSON.parse(this.getAttribute('data-images'));
@@ -122,8 +151,8 @@ document.querySelectorAll('.main-content a').forEach(link => {
         // Show the first image
         modalImage.src = imagesArray[currentImageIndex];
 
-        // Randomly position the modal within the viewport and set random size
-        positionModal();
+        // Position the modal to the right of the clicked link
+        positionModal(this);
 
         modal.style.display = 'block'; // Show the modal
     });
@@ -132,6 +161,7 @@ document.querySelectorAll('.main-content a').forEach(link => {
 // Close the modal
 closeBtn.addEventListener('click', function () {
     modal.style.display = 'none';
+    isModalPinned = false; // Reset the pin state when the modal is closed
 });
 
 // Navigate to previous image
@@ -150,46 +180,48 @@ nextBtn.addEventListener('click', function () {
 window.onclick = function (event) {
     if (event.target === modal) {
         modal.style.display = 'none';
+        isModalPinned = false; // Reset the pin state when the modal is closed
     }
-}
+};
 
 // Close modal with Escape key
 window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') { // Check if the pressed key is "Escape"
-        modal.style.display = 'none'; // Close the modal
+        modal.style.display = 'none';
+        isModalPinned = false; // Reset the pin state when the modal is closed
     }
 });
 
-// Function to randomly position the modal within the viewport and set random size
-function positionModal() {
-    // Get the viewport dimensions
+// Function to position the modal to the right of the clicked/hovered link
+function positionModal(link) {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Generate random width and calculate height based on the aspect ratio
-    let randomHeight = Math.random() * (viewportHeight * 0.8) + 200; // Between 200px and 80% of viewport height
-    let randomWidth = randomHeight / aspectRatio; // Calculate width based on aspect ratio
+    const linkRect = link.getBoundingClientRect();
+    const linkTop = linkRect.top + window.scrollY;
+    const linkLeft = linkRect.left + window.scrollX;
 
-    // Ensure the modal width does not exceed the viewport width
-    if (randomWidth > viewportWidth * 0.2) {
-        randomWidth = viewportWidth * 0.2; // Limit to 80% of viewport width
-        randomHeight = randomWidth * aspectRatio; // Recalculate height to maintain aspect ratio
+    let modalHeight = viewportHeight * 0.8;
+    let modalWidth = modalHeight / aspectRatio;
+
+    if (modalWidth > viewportWidth * 0.9) {
+        modalWidth = viewportWidth * 0.9;
+        modalHeight = modalWidth * aspectRatio;
     }
 
-    // Set the modal's size
-    modal.style.width = `${randomWidth}px`;
-    modal.style.height = `${randomHeight}px`;
+    modal.style.width = `${modalWidth}px`;
+    modal.style.height = `${modalHeight}px`;
 
-    // Calculate random top and left positions ensuring the modal stays within the viewport
-    const randomTop = Math.random() * (viewportHeight - randomHeight - 5) + 5; // 20 is for padding
-    const randomLeft = Math.random() * (viewportWidth - randomWidth - 5) + 5; // 20 is for padding
+    const modalTop = Math.min(linkTop + linkRect.height * 8, viewportHeight - modalHeight + 200); // Below
+    const modalLeft = Math.min(linkLeft + linkRect.width * 6, viewportWidth - modalWidth - 100); // To the right
 
-    // Set the modal's position
-    modal.style.top = `${randomTop}px`;
-    modal.style.left = `${randomLeft}px`;
+    modal.style.top = `${modalTop}px`;
+    modal.style.left = `${modalLeft}px`;
 }
 
-  </script>
+
+    </script>
+    
 </body>
 
 </html>
