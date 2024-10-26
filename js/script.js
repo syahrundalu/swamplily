@@ -1,13 +1,21 @@
 (function($) {
 
     "use strict";
+    
+
+    $(function() {
+      AOS.init();
+      });        
+   
+
 
     $(document).ready(function() {
       
       // masonoary //
 
       initIsotope();
-
+  
+    
       // lightbox
 
       lightbox.option({
@@ -73,7 +81,7 @@
         crossFade: true, // Cross fade effect
      },
       autoplay: {
-          delay: 7000, // Delay between transitions (in milliseconds)
+          delay: 5000, // Delay between transitions (in milliseconds)
           disableOnInteraction: false, // Continue autoplay after user interactions
       },
       loop: true, // Enable looping of slides
@@ -166,6 +174,7 @@ var localSwiper = new Swiper('.local-swiper', {
 (function(html) {
 
   'use strict';
+ 
 
   const cfg = {
       
@@ -183,7 +192,7 @@ var localSwiper = new Swiper('.local-swiper', {
     html.classList.add('ss-preload');
 
     // Set the delay for the preloader in milliseconds (e.g., 3000 for 3 seconds)
-    const preloaderDelay = 1000; // 3 seconds
+    const preloaderDelay = 3000; // 3 seconds
 
     window.addEventListener('load', function() {
         setTimeout(() => {  // Add a timer for preloader

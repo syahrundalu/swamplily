@@ -27,8 +27,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="css/lightbox.min.css">
-<!--style sheet-->
+  <!--style sheet-->
   <link rel="stylesheet" href="css/vendor.css">
+  <!-- link aos -->
+   <link rel="stylesheet" href="vendor/aos/aos.css">
   <!--style sheet-->
   <link rel="stylesheet" href="css/style.css">
   
@@ -88,7 +90,7 @@
       </div>
     </div>
   </div>
-  <div class="container link-landing">
+  <div class="container link-landing" id="logolanding">
     <div class="row">
       <ul>
         <li><a href="about.html">About</a></li>
@@ -103,12 +105,14 @@
         <script>
           const bannerbackground = document.getElementById('bannerbackground');
           const logodancing = document.getElementById('logodancing');
+          const logolanding = document.getElementById('logolanding');
       
           function parallaxEffect() {
             let value = window.scrollY;
             bannerbackground.style.transform = `translateY(${value * 0.4}px)`;
             logodancing.style.transform = `translateY(${value * 0.4}px)`;
             logodancing.style.opacity = 1 - value * 0.001;
+            logolanding.style.transform = `translateY(${value * -0.09}px)`;
           }
       
           window.addEventListener('scroll', function(){
@@ -139,6 +143,7 @@
   <script src="js/script.js"></script>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
 </body>
 
 </html>
