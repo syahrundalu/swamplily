@@ -70,7 +70,7 @@
     var swiper = new Swiper('.about-swiper-container', {
       slidesPerView: 1, // Number of slides per view
       spaceBetween: 0, // Space between slides
-      simulateTouch: false, // Nonaktifkan drag
+      simulateTouch: true, // Nonaktifkan drag
       pagination: {
           el: '.swiper-pagination',
           clickable: false, // Clickable pagination bullets
@@ -81,7 +81,7 @@
         crossFade: true, // Cross fade effect
      },
       autoplay: {
-          delay: 5000, // Delay between transitions (in milliseconds)
+          delay: 3000, // Delay between transitions (in milliseconds)
           disableOnInteraction: false, // Continue autoplay after user interactions
       },
       loop: true, // Enable looping of slides
@@ -318,13 +318,7 @@ const ssMobileMenu = function() {
               const sectionHeight = current.offsetHeight;
               const sectionTop = current.offsetTop - 50;
               const sectionId = current.getAttribute('id');
-          
-             /* If our current scroll position enters the space where current section 
-              * on screen is, add .current class to parent element(li) of the thecorresponding 
-              * navigation link, else remove it. To know which link is active, we use 
-              * sectionId variable we are getting while looping through sections as 
-              * an selector
-              */
+        
               if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                   document.querySelector('.s-header__nav a[href*=' + sectionId + ']').parentNode.classList.add('current');
               } else {

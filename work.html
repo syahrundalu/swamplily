@@ -45,35 +45,34 @@
       <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo"></a>
       <ul class="nav">
         <li><a href="about.html">About</a></li>
-        <li><a href="#works">Works</a></li>
+        <li><a href="#works">Work</a></li>
         <li><a href="shop.html">Shop</a></li>
       </ul>
     </div> 
 
     <div class="main-content">
       <ul>
-        <li><a href="#" data-images='["images/illustration-1.jpg", "images/about/about-2.JPG"]'>Not Your Typical Romance</a></li>
-        <li><a href="#" data-images='["images/about/about-2.JPG", "images/about/about-1.JPG"]'>Vase Arrangement</a></li>
-        <li><a href="#" data-images='["images/illustration-3.jpg", "images/about/about-2.JPG"]'>Orders</a></li>
-        <li><a href="#" data-images='["images/illustration-4.jpg", "images/about/about-2.JPG"]'>Not Your Typical Romance</a></li>
-        <li><a href="#" data-images='["images/illustration-5.jpg", "images/about/about-2.JPG"]'>Vase Arrangement</a></li>
-        <li><a href="#" data-images='["images/illustration-6.png", "images/about/about-2.JPG"]'>Orders</a></li>
+        <li><a href="#" data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg"]'>Set Design</a></li>
+        <li><a href="#" data-images='["images/about/about-2.JPG", "images/about/about-1.JPG"]'>Photography Series</a></li>
+        <li><a href="#" data-images='["images/illustration-3.jpg", "images/about/about-2.JPG"]'>Floral Accessories</a></li>
+        <li><a href="#" data-images='["images/illustration-4.jpg", "images/about/about-2.JPG"]'>Interior Styling</a></li>
+        <li><a href="#" data-images='["images/illustration-5.jpg", "images/about/about-2.JPG"]'>Arrangements</a></li>
       </ul>
     </div>
     
   <!-- Modal Structure -->
 <div class="modal" id="imageModal">
     <div class="modal-content">
-        <span class="close-btn">&times;</span>
+        <!-- <span class="close-btn">&times;</span> -->
         <img src="" alt="Popup Image" id="modalImage">
-        <div class="prev" id="prevBtn">&#10094;</div>
-        <div class="next" id="nextBtn">&#10095;</div>
+        <!-- <div class="prev" id="prevBtn">&#10094;</div>
+        <div class="next" id="nextBtn">&#10095;</div> -->
     </div>
 </div>
 
-    <!-- Decorative Images -->
+    <!-- Decorative Images
     <img src="images/left-decor.png" alt="Flower Decoration" class="flower-img flower-left">
-    <img src="images/right-decor.png" alt="Flower Decoration" class="flower-img flower-right">
+    <img src="images/right-decor.png" alt="Flower Decoration" class="flower-img flower-right"> -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -109,7 +108,7 @@ let imagesArray = [];
 let isModalPinned = false; // This flag will help to "pin" the modal when clicked
 
 // Aspect ratio (height:width)
-const aspectRatio = 16 / 9; // Change this to your desired ratio
+const aspectRatio = 4 / 3; // Change this to your desired ratio
 
 // Function to show the modal with images
 document.querySelectorAll('.main-content a').forEach(link => {
@@ -213,7 +212,7 @@ function positionModal(link) {
     modal.style.height = `${modalHeight}px`;
 
     const modalTop = Math.min(linkTop + linkRect.height * 8, viewportHeight - modalHeight + 200); // Below
-    const modalLeft = Math.min(linkLeft + linkRect.width * 6, viewportWidth - modalWidth - 100); // To the right
+    const modalLeft = Math.min(linkLeft + linkRect.width * 6, viewportWidth - modalWidth - 320); // To the right
 
     modal.style.top = `${modalTop}px`;
     modal.style.left = `${modalLeft}px`;
