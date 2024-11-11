@@ -54,16 +54,17 @@
       <ul>
         <li><a href="#" data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg"]'>Set Design</a></li>
         <li><a href="#" data-images='["images/about/about-2.JPG", "images/about/about-1.JPG"]'>Photography Series</a></li>
-        <li><a href="#" data-images='["images/illustration-3.jpg", "images/about/about-2.JPG"]'>Floral Accessories</a></li>
+        <li><a href="#" data-images='["images/floral/1.jpg", "images/about/about-2.JPG"]'>Floral Accessories</a></li>
         <li><a href="#" data-images='["images/illustration-4.jpg", "images/about/about-2.JPG"]'>Interior Styling</a></li>
         <li><a href="#" data-images='["images/illustration-5.jpg", "images/about/about-2.JPG"]'>Arrangements</a></li>
+
       </ul>
     </div>
     
   <!-- Modal Structure -->
 <div class="modal" id="imageModal">
     <div class="modal-content">
-        <!-- <span class="close-btn">&times;</span> -->
+        <span class="close-btn">&times;</span>
         <img src="" alt="Popup Image" id="modalImage">
         <!-- <div class="prev" id="prevBtn">&#10094;</div>
         <div class="next" id="nextBtn">&#10095;</div> -->
@@ -200,7 +201,7 @@ function positionModal(link) {
     const linkTop = linkRect.top + window.scrollY;
     const linkLeft = linkRect.left + window.scrollX;
 
-    let modalHeight = viewportHeight * 0.8;
+    let modalHeight = viewportHeight * 0.9;
     let modalWidth = modalHeight / aspectRatio;
 
     if (modalWidth > viewportWidth * 0.9) {
@@ -211,8 +212,8 @@ function positionModal(link) {
     modal.style.width = `${modalWidth}px`;
     modal.style.height = `${modalHeight}px`;
 
-    const modalTop = Math.min(linkTop + linkRect.height * 8, viewportHeight - modalHeight + 200); // Below
-    const modalLeft = Math.min(linkLeft + linkRect.width * 6, viewportWidth - modalWidth - 320); // To the right
+    const modalTop = Math.min(linkTop + linkRect.height * 8, viewportHeight - modalHeight + 280); // Below
+    const modalLeft = Math.min(linkLeft + linkRect.width * 6, viewportWidth - modalWidth - 280); // To the right
 
     modal.style.top = `${modalTop}px`;
     modal.style.left = `${modalLeft}px`;
