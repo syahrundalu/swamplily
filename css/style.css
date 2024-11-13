@@ -428,12 +428,11 @@ a:hover {
   .link-landing ul li a {
     text-decoration: none; /* Remove underline */
     color: #EBE7CA; /* Set the link color */
-    font-weight: 400; /* Default font weight */
   }
   
   /* Add hover effect for <li> elements */
   .link-landing ul li a:hover {
-    font-weight: 700; /* Increase font weight on hover */
+    font-style: italic;
   }
   
   .link-landing ul li:last-child {
@@ -794,18 +793,18 @@ a:hover {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 50%; /* Center horizontally */
-    top: 50%; /* Center vertically */
-    max-width: auto; /* Increase maximum width of modal */
-    max-height: 98vh; /* Increase maximum height of modal */
-    width: auto; /* Auto width to fit content */   
-    height: auto; /* Auto height to fit content */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    padding: 0; /* No padding to let image size determine modal size */
-    overflow: hidden; /* Hide overflow to prevent scrolling */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    max-width: 98vw; /* Restrict max width to viewport width */
+    max-height: 98vh; /* Restrict max height to viewport height */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    overflow: hidden;
 }
 
 .modal-content {
@@ -820,11 +819,11 @@ a:hover {
 }
 
 .modal-content img {
-    height: 100%; /* Fill the height of the modal */
-    width: auto; /* Adjust width automatically to maintain aspect ratio */
-    max-width: none; /* Allow the image to expand beyond 100% of modal width */
+    max-width: 100%; /* Prevents image from exceeding modal width */
+    max-height: 98vh; /* Prevents image from exceeding viewport height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto;
 }
-
 
 .close-btn {
     position: absolute;
@@ -834,7 +833,6 @@ a:hover {
     font-size: 30px;
     font-weight: medium;
     cursor: pointer;
-    display: none;
 }
 
 .prev, .next {

@@ -67,25 +67,21 @@
 
     }); // End of a document ready
 
-    var swiper = new Swiper('.about-swiper-container', {
-      slidesPerView: 1, // Number of slides per view
-      spaceBetween: 0, // Space between slides
-      simulateTouch: false, // Nonaktifkan drag
+    var aboutswiper = new Swiper('.about-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      simulateTouch: false,
       pagination: {
-          el: '.swiper-pagination',
-          clickable: false, // Clickable pagination bullets
+        el: '.swiper-pagination',
+        clickable: false,
       },
-      effect: 'fade', // Set effect to fade
-      speed : 1000,
-      fadeEffect: {
-        crossFade: true, // Cross fade effect
-     },
       autoplay: {
-          delay: 3000, // Delay between transitions (in milliseconds)
-          disableOnInteraction: false, // Continue autoplay after user interactions
+        delay: 5000,
+        disableOnInteraction: false,
       },
-      loop: true, // Enable looping of slides
+      loop: true,
   });
+  
 
   var signatureSwiper = new Swiper('.signature-swiper', {
     slidesPerView: 1,

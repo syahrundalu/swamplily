@@ -52,24 +52,21 @@
 
     <div class="main-content">
       <ul>
-        <li><a href="#" data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg"]'>Set Design</a></li>
-        <li><a href="#" data-images='["images/photographseries/1.jpg", "images/about/about-1.JPG"]'>Photography Series</a></li>
-        <li><a href="#" data-images='["images/floral/1.jpg", "images/about/about-2.JPG"]'>Floral Accessories</a></li>
-        <li><a href="#" data-images='["images/interiorstyling/1.jpg", "images/about/about-2.JPG"]'>Interior Styling</a></li>
-        <li><a href="#" data-images='["images/arrangement/1.jpg", "images/about/about-2.JPG"]'>Arrangements</a></li>
+        <li><a href="#" data-images='["images/setdesign/1.jpg"]'>Set Design</a></li>
+        <li><a href="#" data-images='["images/photographseries/1.jpg"]'>Photography Series</a></li>
+        <li><a href="#" data-images='["images/floral/1.jpg"]'>Floral Accessories</a></li>
+        <li><a href="#" data-images='["images/interiorstyling/1.jpg"]'>Interior Styling</a></li>
+        <li><a href="#" data-images='["images/arrangement/1.jpg"]'>Arrangements</a></li>
 
       </ul>
     </div>
     
-  <!-- Modal Structure -->
-<div class="modal" id="imageModal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <img src="" alt="Popup Image" id="modalImage">
-        <!-- <div class="prev" id="prevBtn">&#10094;</div>
-        <div class="next" id="nextBtn">&#10095;</div> -->
-    </div>
-</div>
+    <div class="modal" id="imageModal">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <img src="" alt="Popup Image" id="modalImage">
+      </div>
+  </div>
 
     <!-- Decorative Images
     <img src="images/left-decor.png" alt="Flower Decoration" class="flower-img flower-left">
@@ -96,132 +93,59 @@
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script src="js/script.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js"></script>
-
-  <script>
-    const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-const closeBtn = document.querySelector('.close-btn');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-let currentImageIndex = 0;
-let imagesArray = [];
-let isModalPinned = false; // This flag will help to "pin" the modal when clicked
-
-// Aspect ratio (height:width)
-const aspectRatio = 4 / 3; // Change this to your desired ratio
-
-// Function to show the modal with images
-document.querySelectorAll('.main-content a').forEach(link => {
-    // Show modal on hover
-    link.addEventListener('mouseover', function (e) {
-        if (!isModalPinned) { // Only show on hover if it's not pinned
-            e.preventDefault(); // Prevent default anchor click behavior
-
-            // Get images from data attribute
-            imagesArray = JSON.parse(this.getAttribute('data-images'));
-            currentImageIndex = 0; // Reset to first image
-
-            // Show the first image
-            modalImage.src = imagesArray[currentImageIndex];
-
-            // Position the modal to the right of the hovered link
-            positionModal(this);
-
-            modal.style.display = 'block'; // Show the modal
-        }
-    });
-
-    // Hide the modal when the user moves the mouse away (only if not pinned)
-    link.addEventListener('mouseout', function () {
-        if (!isModalPinned) {
-            modal.style.display = 'none'; // Hide the modal
-        }
-    });
-
-    // Pin the modal when clicked
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        isModalPinned = true; // Pin the modal so it stays open on click
-
-        // Get images from data attribute
-        imagesArray = JSON.parse(this.getAttribute('data-images'));
-        currentImageIndex = 0; // Reset to first image
-
-        // Show the first image
-        modalImage.src = imagesArray[currentImageIndex];
-
-        // Position the modal to the right of the clicked link
-        positionModal(this);
-
-        modal.style.display = 'block'; // Show the modal
-    });
-});
-
-// Close the modal
-closeBtn.addEventListener('click', function () {
-    modal.style.display = 'none';
-    isModalPinned = false; // Reset the pin state when the modal is closed
-});
-
-// Navigate to previous image
-prevBtn.addEventListener('click', function () {
-    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : imagesArray.length - 1;
-    modalImage.src = imagesArray[currentImageIndex];
-});
-
-// Navigate to next image
-nextBtn.addEventListener('click', function () {
-    currentImageIndex = (currentImageIndex < imagesArray.length - 1) ? currentImageIndex + 1 : 0;
-    modalImage.src = imagesArray[currentImageIndex];
-});
-
-// Close modal on outside click
-window.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-        isModalPinned = false; // Reset the pin state when the modal is closed
-    }
-};
-
-// Close modal with Escape key
-window.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') { // Check if the pressed key is "Escape"
-        modal.style.display = 'none';
-        isModalPinned = false; // Reset the pin state when the modal is closed
-    }
-});
-
-// Function to position the modal to the right of the clicked/hovered link
-function positionModal(link) {
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-
-    const linkRect = link.getBoundingClientRect();
-    const linkTop = linkRect.top + window.scrollY;
-    const linkLeft = linkRect.left + window.scrollX;
-
-    let modalHeight = viewportHeight * 0.9;
-    let modalWidth = modalHeight / aspectRatio;
-
-    if (modalWidth > viewportWidth * 0.9) {
-        modalWidth = viewportWidth * 0.9;
-        modalHeight = modalWidth * aspectRatio;
-    }
-
-    modal.style.width = `${modalWidth}px`;
-    modal.style.height = `${modalHeight}px`;
-
-    const modalTop = Math.min(linkTop + linkRect.height * 8, viewportHeight - modalHeight + 280); // Below
-    const modalLeft = Math.min(linkLeft + linkRect.width * 6, viewportWidth - modalWidth - 280); // To the right
-
-    modal.style.top = `${modalTop}px`;
-    modal.style.left = `${modalLeft}px`;
-}
-
-
-    </script>
     
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Loop through each link to attach event listeners
+    document.querySelectorAll('.main-content a').forEach(link => {
+        
+        // Show modal on click
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const imagesArray = JSON.parse(this.getAttribute('data-images'));
+            modalImage.src = imagesArray[0]; // Set image source
+            modal.style.display = 'flex'; // Show the modal
+        });
+
+        // Show modal on hover
+        link.addEventListener('mouseover', function () {
+            const imagesArray = JSON.parse(this.getAttribute('data-images'));
+            modalImage.src = imagesArray[0]; // Set the first image
+            modal.style.display = 'flex'; // Show the modal
+        });
+
+        
+    });
+
+    // Close the modal when close button is clicked
+    closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Close modal on outside click
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // Close modal with Escape key
+    window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+
+</script>
+
 </body>
+
+
 
 </html>
