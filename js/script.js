@@ -70,7 +70,7 @@
     var swiper = new Swiper('.about-swiper-container', {
       slidesPerView: 1, // Number of slides per view
       spaceBetween: 0, // Space between slides
-      simulateTouch: true, // Nonaktifkan drag
+      simulateTouch: false, // Nonaktifkan drag
       pagination: {
           el: '.swiper-pagination',
           clickable: false, // Clickable pagination bullets
@@ -213,8 +213,6 @@ var localSwiper = new Swiper('.local-swiper', {
         siteBody.classList.remove('ss-show');
     });
 }; // end ssPreloader
-
-
 
  
  /* move header
