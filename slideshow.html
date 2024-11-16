@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="images/logo.PNG" type="image/png">
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="css/slideshow.css">
+</head>
+<body>
+    <h1 id="slideshow-title"></h1>
+    <div id="slideshow"></div>
+    <div id="slideshow-description"></div>
+
+    <!-- Next and Previous Buttons -->
+    <button id="prev-button" class="nav-button">&#10094;</button>
+    <button id="next-button" class="nav-button">&#10095;</button>
+
+    <a id="back-button" href="work.html">Back</a>
+</body>
+
+<script>
+     // Retrieve data from localStorage
+const title = localStorage.getItem('slideshowTitle') || 'Default Slideshow';
+const images = JSON.parse(localStorage.getItem('slideshowImages')) || [];
+const descriptions = JSON.parse(localStorage.getItem('slideshowDescriptions')) || [];
+const credits = JSON.parse(localStorage.getItem('slideshowCredits')) || [];
+
+// Get DOM elements
+const slideshow = document.getElementById('slideshow');
+const description = document.getElementById('slideshow-description');
+const slideshowTitle = document.getElementById('slideshow-title');
+
+// Set title
+slideshowTitle.innerText = title;
+
+if (images.length > 0) {
+  let currentIndex = 0;
+
+  // Function to update the slideshow
+  function updateSlideshow() {
+    // Update the image
+    slideshow.innerHTML = `<img src="${images[currentIndex]}" alt="${title}" style="max-width:90%; height:auto;">`;
+
+    // Update the description and credit
+    description.innerHTML = `
+      <p><em>${credits[currentIndex] || ''}</em></p>
+    `;
+  }
+
+  // Initialize the slideshow
+  updateSlideshow();
+
+  // Navigation buttons
+  document.getElementById('prev-button').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlideshow();
+  });
+
+  document.getElementById('next-button').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlideshow();
+  });
+} else {
+  slideshow.innerHTML = '<p>No images available</p>';
+}
+
+</script>
+</html>

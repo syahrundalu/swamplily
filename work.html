@@ -51,14 +51,68 @@
     </div> 
 
     <div class="main-content">
-      <ul>
-        <li><a href="#" data-images='["images/setdesign/1.jpg"]'>Set Design</a></li>
-        <li><a href="#" data-images='["images/photographseries/1.jpg"]'>Photography Series</a></li>
-        <li><a href="#" data-images='["images/floral/1.jpg"]'>Floral Accessories</a></li>
-        <li><a href="#" data-images='["images/interiorstyling/1.jpg"]'>Interior Styling</a></li>
-        <li><a href="#" data-images='["images/arrangement/1.jpg"]'>Arrangements</a></li>
+      <!-- <ul>
+        <li><a href="slideshow.html" data-name="Set Design" data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg", "images/setdesign/4.jpg"]'>Set Design</a></li>
+        <li><a href="slideshow.html" data-name="Photography Series" data-images='["images/photographseries/1.jpg", "images/photographseries/2.jpg"]'>Photography Series</a></li>
+        <li><a href="slideshow.html" data-name="Floral Accessories" data-images='["images/floral/1.jpg", "images/floral/2.jpg"]'>Floral Accessories</a></li>
+        <li><a href="slideshow.html" data-name="Interior Styling" data-images='["images/interiorstyling/1.jpg", "images/interiorstyling/2.jpg"]'>Interior Styling</a></li>
+        <li><a href="slideshow.html" data-name="Arrangements" data-images='["images/arrangement/1.jpg", "images/arrangement/2.jpg"]'>Arrangements</a></li>
+      </ul> -->
 
+      <ul>
+        <li>
+          <a 
+            href="slideshow.html" 
+            data-name="Set Design" 
+            data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg", "images/setdesign/4.jpg","images/setdesign/5.jpg", "images/setdesign/6.jpg", "images/setdesign/7.jpg", "images/setdesign/8.jpg","images/setdesign/9.jpg", "images/setdesign/10.jpg", "images/setdesign/11.jpg"]' 
+            data-descriptions='["We Make this for love.","We Make this for love.","We Make this for love.","We Make this for love.","images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg", "images/setdesign/4.jpg","images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg"]' 
+            data-credits='["Photo by John Doe", "Photo by Jane Doe", "Photo by John Smith", "Photo by Emily Davis"]'>
+            Set Design
+          </a>
+        </li>
+        <li>
+          <a 
+            href="slideshow.html" 
+            data-name="Photography Series" 
+            data-images='["images/photographseries/1.jpg", "images/photographseries/2.jpg", "images/photographseries/3.jpg", "images/photographseries/4.jpg", "images/photographseries/5.jpg"]' 
+            data-descriptions='["Beautiful landscape.", "A serene portrait.","Beautiful landscape.", "A serene portrait.","Beautiful landscape."]' 
+            data-credits='["Photo by Alice", "Photo by Bob"]'>
+            Photography Series
+          </a>
+        </li>
+        <li>
+          <a 
+            href="slideshow.html" 
+            data-name="Floral Accessories" 
+            data-images='["images/floral/1.jpg", "images/floral/2.jpg","images/floral/3.jpg", "images/floral/4.jpg","images/floral/5.jpg", "images/floral/6.jpg","images/floral/7.jpg", "images/floral/8.jpg"]' 
+            data-descriptions='["Elegant floral arrangement.", "Vibrant bouquet."]' 
+            data-credits='["Photo by Carol", "Photo by Dave"]'>
+            Floral Accessories
+          </a>
+        </li>
+        <li>
+          <a 
+            href="slideshow.html" 
+            data-name="Interior Styling" 
+            data-images='["images/interiorstyling/1.jpg", "images/interiorstyling/2.jpg","images/interiorstyling/3.jpg", "images/interiorstyling/4.jpg","images/interiorstyling/5.jpg", "images/interiorstyling/6.JPEG","images/interiorstyling/7.JPEG", "images/interiorstyling/8.JPEG","images/interiorstyling/9.jpg", "images/interiorstyling/10.jpg","images/interiorstyling/11.JPEG"]' 
+            data-descriptions='["Elegant floral arrangement.", "Vibrant bouquet."]' 
+            data-credits='["Photo by Carol", "Photo by Dave"]'>
+            Interior Styling
+          </a>
+        </li>
+        <li>
+          <a 
+            href="slideshow.html" 
+            data-name="Arrangement" 
+            data-images='["images/arrangement/1.jpg", "images/arrangement/2.jpg","images/arrangement/3.jpg", "images/arrangement/4.jpg","images/arrangement/5.jpg", "images/arrangement/6.jpg","images/arrangement/7.jpg", "images/arrangement/8.jpg","images/arrangement/9.jpg", "images/arrangement/10.jpg","images/arrangement/11.jpg", "images/arrangement/12.jpg"]' 
+            data-descriptions='["Elegant floral arrangement.", "Vibrant bouquet."]' 
+            data-credits='["Photo by Carol", "Photo by Dave"]'>
+            Arrangement
+          </a>
+        </li>
+        <!-- Add other categories in the same pattern -->
       </ul>
+      
     </div>
     
     <div class="modal" id="imageModal">
@@ -151,6 +205,30 @@
             isModalPinned = false; // Reset the pin state when modal is closed
         }
     });
+});
+
+// Get all links
+const links = document.querySelectorAll('ul li a');
+
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    // Retrieve data attributes
+    const name = link.dataset.name;
+    const images = JSON.parse(link.dataset.images);
+    const descriptions = JSON.parse(link.dataset.descriptions);
+    const credits = JSON.parse(link.dataset.credits);
+
+    // Store them in localStorage
+    localStorage.setItem('slideshowTitle', name);
+    localStorage.setItem('slideshowImages', JSON.stringify(images));
+    localStorage.setItem('slideshowDescriptions', JSON.stringify(descriptions));
+    localStorage.setItem('slideshowCredits', JSON.stringify(credits));
+
+    // Redirect to slideshow.html
+    window.location.href = link.href;
+  });
 });
 
 
