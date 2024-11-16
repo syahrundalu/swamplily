@@ -99,44 +99,56 @@
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.close-btn');
+    let isModalPinned = false; // Flag to keep modal open on click
 
     // Loop through each link to attach event listeners
     document.querySelectorAll('.main-content a').forEach(link => {
-        
-        // Show modal on click
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const imagesArray = JSON.parse(this.getAttribute('data-images'));
-            modalImage.src = imagesArray[0]; // Set image source
-            modal.style.display = 'flex'; // Show the modal
-        });
 
         // Show modal on hover
         link.addEventListener('mouseover', function () {
-            const imagesArray = JSON.parse(this.getAttribute('data-images'));
-            modalImage.src = imagesArray[0]; // Set the first image
-            modal.style.display = 'flex'; // Show the modal
+            if (!isModalPinned) { // Only show on hover if not pinned
+                const imagesArray = JSON.parse(this.getAttribute('data-images'));
+                modalImage.src = imagesArray[0]; // Set the first image
+                modal.style.display = 'flex'; // Show the modal
+            }
         });
 
-        
+        // Hide modal when cursor leaves the link (if not pinned)
+        link.addEventListener('mouseout', function () {
+            if (!isModalPinned) { // Only hide on mouseout if not pinned
+                modal.style.display = 'none'; // Hide the modal
+            }
+        });
+
+        // Pin the modal (keep it open) when clicked
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            isModalPinned = true; // Set flag to keep modal open
+            const imagesArray = JSON.parse(this.getAttribute('data-images'));
+            modalImage.src = imagesArray[0];
+            modal.style.display = 'flex';
+        });
     });
 
-    // Close the modal when close button is clicked
+    // Close the modal and reset the pin when the close button is clicked
     closeBtn.addEventListener('click', function () {
         modal.style.display = 'none';
+        isModalPinned = false; // Reset the pin state when modal is closed
     });
 
-    // Close modal on outside click
+    // Close modal on outside click and reset the pin state
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = 'none';
+            isModalPinned = false; // Reset the pin state when modal is closed
         }
     };
 
-    // Close modal with Escape key
+    // Close modal with Escape key and reset the pin state
     window.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             modal.style.display = 'none';
+            isModalPinned = false; // Reset the pin state when modal is closed
         }
     });
 });
