@@ -647,6 +647,7 @@ a:hover {
     height: 60px;
     border-radius:0px;
     background-color: #40503D;
+    color: white;
 }
 
 .contact-section .btn:hover {
@@ -688,6 +689,14 @@ a:hover {
     color: #9a9a9a;
 }
 
+.shop textarea {
+    height: 250px;
+}
+
+.shop input, .shop select{
+    height: 50px;
+    border-radius: 3px;
+}
 
 .contact-section img {
     width: 100%;
@@ -709,6 +718,7 @@ a:hover {
 .work footer {
     margin-top: 180px;
 }
+
 
 
 /* Main content */
@@ -858,4 +868,53 @@ a:hover {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.floral-section {
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.floral-section p{
+    color: #fff;
+}
+
+.background-swiper {
+    position: relative; /* Ensure the swiper is properly positioned */
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place behind content */
+}
+
+.background-swiper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 2; /* Below the header */
+}
+
+.background-swiper .swiper-slide img {
+    object-fit: cover; /* Ensure the background image fits the container */
+    height: 100vh;
+}
+
+.content-overlay {
+    position: relative; /* Ensure it sits above the darkened background */
+    z-index: 3; /* Keep content visible above the overlay */
+}
+
+.swiper-container.background-swiper {
+    z-index: 1; /* Send the background carousel behind the content */
+}
+
+.floral-section img.header {
+    position: relative; /* Ensures it is positioned independently */
+    filter: none; /* Remove any filter effect */
+    opacity: 1 !important; /* Force the opacity to be 1 */
+    z-index: 4; /* Ensure it's above the background */
 }

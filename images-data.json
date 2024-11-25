@@ -1,0 +1,191 @@
+{
+    "categories": [
+      {
+        "name": "Set Design",
+        "images": [
+          "images/setdesign/1.jpg",
+          "images/setdesign/2.jpg",
+          "images/setdesign/3.jpg",
+          "images/setdesign/4.jpg",
+          "images/setdesign/5.jpg",
+          "images/setdesign/6.jpg",
+          "images/setdesign/7.jpg",
+          "images/setdesign/8.jpg",
+          "images/setdesign/9.jpg",
+          "images/setdesign/10.jpg",
+          "images/setdesign/11.jpg"
+        ],
+        "descriptions": [
+          "Elegant stage setup for events.",
+          "Creative use of colors and lights.",
+          "Minimalist set design for exhibitions.",
+          "Dynamic background arrangement.",
+          "Modern and stylish decor elements.",
+          "Timeless and elegant composition.",
+          "Detailed craftsmanship in every corner.",
+          "Innovative designs that inspire.",
+          "Functionality and beauty combined.",
+          "Sophisticated layouts for any occasion.",
+          "A celebration of artistic creativity."
+        ],
+        "credits": [
+          "Photo by John Doe",
+          "Photo by Jane Doe",
+          "Photo by John Smith",
+          "Photo by Emily Davis",
+          "Photo by Alex Taylor",
+          "Photo by Emma Johnson",
+          "Photo by Liam Brown",
+          "Photo by Ava Wilson",
+          "Photo by Sophia Martinez",
+          "Photo by Mia Anderson",
+          "Photo by William Thomas"
+        ]
+      },
+      {
+        "name": "Photography Series",
+        "images": [
+          "images/photographseries/1.jpg",
+          "images/photographseries/2.jpg",
+          "images/photographseries/3.jpg",
+          "images/photographseries/4.jpg",
+          "images/photographseries/5.jpg"
+        ],
+        "descriptions": [
+          "Beautiful landscape with sunset.",
+          "A serene portrait of a traveler.",
+          "Majestic mountain scenery.",
+          "Urban photography with vibrant colors.",
+          "Peaceful countryside view."
+        ],
+        "credits": [
+          "Photo by Alice Williams",
+          "Photo by Bob Harris",
+          "Photo by Charlie Green",
+          "Photo by Danielle White",
+          "Photo by Ethan Adams"
+        ]
+      },
+      {
+        "name": "Floral Accessories",
+        "images": [
+          "images/floral/1.jpg",
+          "images/floral/2.jpg",
+          "images/floral/3.jpg",
+          "images/floral/4.jpg",
+          "images/floral/5.jpg",
+          "images/floral/6.jpg",
+          "images/floral/7.jpg",
+          "images/floral/8.jpg"
+        ],
+        "descriptions": [
+          "Elegant floral arrangement for weddings.",
+          "Vibrant bouquet with seasonal flowers.",
+          "Rustic floral decor with natural elements.",
+          "Modern centerpiece for special events.",
+          "Charming bouquet for intimate gatherings.",
+          "A mix of fresh and dried flowers.",
+          "Artistic floral composition for photography.",
+          "Floral jewelry designed for elegance."
+        ],
+        "credits": [
+          "Photo by Carol Baker",
+          "Photo by Dave Clark",
+          "Photo by Fiona Evans",
+          "Photo by George Hall",
+          "Photo by Hannah Lee",
+          "Photo by Ian Parker",
+          "Photo by Julia Roberts",
+          "Photo by Kevin Stewart"
+        ]
+      },
+      {
+        "name": "Interior Styling",
+        "images": [
+          "images/interiorstyling/1.jpg",
+          "images/interiorstyling/2.jpg",
+          "images/interiorstyling/3.jpg",
+          "images/interiorstyling/4.jpg",
+          "images/interiorstyling/5.jpg",
+          "images/interiorstyling/6.jpg",
+          "images/interiorstyling/7.jpg",
+          "images/interiorstyling/8.jpg",
+          "images/interiorstyling/9.jpg",
+          "images/interiorstyling/10.jpg",
+          "images/interiorstyling/11.jpg"
+        ],
+        "descriptions": [
+          "Cozy living room setup with neutral tones.",
+          "Elegant dining area with rustic charm.",
+          "Modern bedroom styling with clean lines.",
+          "Sophisticated home office design.",
+          "Charming kitchen with farmhouse vibes.",
+          "Luxurious bathroom decor and styling.",
+          "Artistic wall decor for living spaces.",
+          "Open floor plan with modern aesthetics.",
+          "Stylish furniture arrangement.",
+          "Functional yet elegant interior spaces.",
+          "A harmonious blend of textures and colors."
+        ],
+        "credits": [
+          "Photo by Lauren Hughes",
+          "Photo by Mark Rivera",
+          "Photo by Natalie Fisher",
+          "Photo by Oscar Lopez",
+          "Photo by Patrick Kelly",
+          "Photo by Quentin Young",
+          "Photo by Rachel Morris",
+          "Photo by Steve Carter",
+          "Photo by Tina Ross",
+          "Photo by Ursula Reed",
+          "Photo by Victor Hughes"
+        ]
+      },
+      {
+        "name": "Arrangements",
+        "images": [
+          "images/arrangement/1.jpg",
+          "images/arrangement/2.jpg",
+          "images/arrangement/3.jpg",
+          "images/arrangement/4.jpg",
+          "images/arrangement/5.jpg",
+          "images/arrangement/6.jpg",
+          "images/arrangement/7.jpg",
+          "images/arrangement/8.jpg",
+          "images/arrangement/9.jpg",
+          "images/arrangement/10.jpg",
+          "images/arrangement/11.jpg",
+          "images/arrangement/12.jpg"
+        ],
+        "descriptions": [
+          "Elegant arrangement for corporate events.",
+          "Minimalist design with pastel tones.",
+          "Luxurious centerpiece for gala nights.",
+          "Whimsical arrangement for outdoor events.",
+          "A burst of colors for celebrations.",
+          "Rustic arrangement with natural charm.",
+          "Festive decor with bold elements.",
+          "Simple yet impactful arrangement.",
+          "Traditional arrangement with a modern twist.",
+          "Bright and cheerful floral setup.",
+          "Seasonal arrangement for year-round occasions.",
+          "Unique and creative composition for events."
+        ],
+        "credits": [
+          "Photo by Wendy Powell",
+          "Photo by Xavier Long",
+          "Photo by Yvonne Grant",
+          "Photo by Zoe Palmer",
+          "Photo by Alan Cook",
+          "Photo by Beth Gibson",
+          "Photo by Carl Fisher",
+          "Photo by Diana Moore",
+          "Photo by Evan Turner",
+          "Photo by Frank Bell",
+          "Photo by Grace King",
+          "Photo by Henry Ward"
+        ]
+      }
+    ]
+  }
+  

@@ -45,79 +45,18 @@
       <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo"></a>
       <ul class="nav">
         <li><a href="about.html">About</a></li>
-        <li><a href="#works">Work</a></li>
+        <li><a href="">Work</a></li>
         <li><a href="shop.html">Shop</a></li>
       </ul>
     </div> 
 
     <div class="main-content">
-      <!-- <ul>
-        <li><a href="slideshow.html" data-name="Set Design" data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg", "images/setdesign/4.jpg"]'>Set Design</a></li>
-        <li><a href="slideshow.html" data-name="Photography Series" data-images='["images/photographseries/1.jpg", "images/photographseries/2.jpg"]'>Photography Series</a></li>
-        <li><a href="slideshow.html" data-name="Floral Accessories" data-images='["images/floral/1.jpg", "images/floral/2.jpg"]'>Floral Accessories</a></li>
-        <li><a href="slideshow.html" data-name="Interior Styling" data-images='["images/interiorstyling/1.jpg", "images/interiorstyling/2.jpg"]'>Interior Styling</a></li>
-        <li><a href="slideshow.html" data-name="Arrangements" data-images='["images/arrangement/1.jpg", "images/arrangement/2.jpg"]'>Arrangements</a></li>
-      </ul> -->
-
-      <ul>
-        <li>
-          <a 
-            href="slideshow.html" 
-            data-name="Set Design" 
-            data-images='["images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg", "images/setdesign/4.jpg","images/setdesign/5.jpg", "images/setdesign/6.jpg", "images/setdesign/7.jpg", "images/setdesign/8.jpg","images/setdesign/9.jpg", "images/setdesign/10.jpg", "images/setdesign/11.jpg"]' 
-            data-descriptions='["We Make this for love.","We Make this for love.","We Make this for love.","We Make this for love.","images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg", "images/setdesign/4.jpg","images/setdesign/1.jpg", "images/setdesign/2.jpg", "images/setdesign/3.jpg"]' 
-            data-credits='["Photo by John Doe", "Photo by Jane Doe", "Photo by John Smith", "Photo by Emily Davis"]'>
-            Set Design
-          </a>
-        </li>
-        <li>
-          <a 
-            href="slideshow.html" 
-            data-name="Photography Series" 
-            data-images='["images/photographseries/1.jpg", "images/photographseries/2.jpg", "images/photographseries/3.jpg", "images/photographseries/4.jpg", "images/photographseries/5.jpg"]' 
-            data-descriptions='["Beautiful landscape.", "A serene portrait.","Beautiful landscape.", "A serene portrait.","Beautiful landscape."]' 
-            data-credits='["Photo by Alice", "Photo by Bob"]'>
-            Photography Series
-          </a>
-        </li>
-        <li>
-          <a 
-            href="slideshow.html" 
-            data-name="Floral Accessories" 
-            data-images='["images/floral/1.jpg", "images/floral/2.jpg","images/floral/3.jpg", "images/floral/4.jpg","images/floral/5.jpg", "images/floral/6.jpg","images/floral/7.jpg", "images/floral/8.jpg"]' 
-            data-descriptions='["Elegant floral arrangement.", "Vibrant bouquet."]' 
-            data-credits='["Photo by Carol", "Photo by Dave"]'>
-            Floral Accessories
-          </a>
-        </li>
-        <li>
-          <a 
-            href="slideshow.html" 
-            data-name="Interior Styling" 
-            data-images='["images/interiorstyling/1.jpg", "images/interiorstyling/2.jpg","images/interiorstyling/3.jpg", "images/interiorstyling/4.jpg","images/interiorstyling/5.jpg", "images/interiorstyling/6.JPEG","images/interiorstyling/7.JPEG", "images/interiorstyling/8.JPEG","images/interiorstyling/9.jpg", "images/interiorstyling/10.jpg","images/interiorstyling/11.JPEG"]' 
-            data-descriptions='["Elegant floral arrangement.", "Vibrant bouquet."]' 
-            data-credits='["Photo by Carol", "Photo by Dave"]'>
-            Interior Styling
-          </a>
-        </li>
-        <li>
-          <a 
-            href="slideshow.html" 
-            data-name="Arrangement" 
-            data-images='["images/arrangement/1.jpg", "images/arrangement/2.jpg","images/arrangement/3.jpg", "images/arrangement/4.jpg","images/arrangement/5.jpg", "images/arrangement/6.jpg","images/arrangement/7.jpg", "images/arrangement/8.jpg","images/arrangement/9.jpg", "images/arrangement/10.jpg","images/arrangement/11.jpg", "images/arrangement/12.jpg"]' 
-            data-descriptions='["Elegant floral arrangement.", "Vibrant bouquet."]' 
-            data-credits='["Photo by Carol", "Photo by Dave"]'>
-            Arrangement
-          </a>
-        </li>
-        <!-- Add other categories in the same pattern -->
-      </ul>
-      
+      <ul></ul> <!-- Images and categories will be dynamically inserted here -->
     </div>
+    
     
     <div class="modal" id="imageModal">
       <div class="modal-content">
-          <span class="close-btn">&times;</span>
           <img src="" alt="Popup Image" id="modalImage">
       </div>
   </div>
@@ -149,46 +88,85 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js"></script>
     
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener("DOMContentLoaded", async () => {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close-btn');
     let isModalPinned = false; // Flag to keep modal open on click
 
-    // Loop through each link to attach event listeners
-    document.querySelectorAll('.main-content a').forEach(link => {
+    // Function to attach hover events
+    const attachHoverEvents = () => {
+        document.querySelectorAll('.main-content a').forEach(link => {
+            // Show modal on hover
+            link.addEventListener('mouseover', function () {
+                if (!isModalPinned) { // Only show on hover if not pinned
+                    const imagesArray = JSON.parse(this.getAttribute('data-images'));
+                    modalImage.src = imagesArray[0]; // Set the first image
+                    modal.style.display = 'flex'; // Show the modal
+                }
+            });
 
-        // Show modal on hover
-        link.addEventListener('mouseover', function () {
-            if (!isModalPinned) { // Only show on hover if not pinned
+            // Hide modal when cursor leaves the link (if not pinned)
+            link.addEventListener('mouseout', function () {
+                if (!isModalPinned) { // Only hide on mouseout if not pinned
+                    modal.style.display = 'none'; // Hide the modal
+                }
+            });
+
+            // Pin the modal (keep it open) when clicked
+            link.addEventListener('click', function (e) {
                 const imagesArray = JSON.parse(this.getAttribute('data-images'));
-                modalImage.src = imagesArray[0]; // Set the first image
-                modal.style.display = 'flex'; // Show the modal
-            }
+                modalImage.src = imagesArray[0];
+                modal.style.display = 'flex';
+            });
+        });
+    };
+
+    try {
+        // Fetch JSON data
+        const response = await fetch("images-data.json");
+        const data = await response.json();
+
+        // Select the container where the categories will be rendered
+        const container = document.querySelector(".main-content ul");
+
+        // Loop through categories and render
+        data.categories.forEach(category => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                <a 
+                    href="slideshow.html" 
+                    data-name="${category.name}" 
+                    data-images='${JSON.stringify(category.images)}' 
+                    data-descriptions='${JSON.stringify(category.descriptions)}' 
+                    data-credits='${JSON.stringify(category.credits)}'>
+                    ${category.name}
+                </a>
+            `;
+            container.appendChild(listItem);
         });
 
-        // Hide modal when cursor leaves the link (if not pinned)
-        link.addEventListener('mouseout', function () {
-            if (!isModalPinned) { // Only hide on mouseout if not pinned
-                modal.style.display = 'none'; // Hide the modal
-            }
-        });
+        // Attach hover events to dynamically added links
+        attachHoverEvents();
 
-        // Pin the modal (keep it open) when clicked
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            isModalPinned = true; // Set flag to keep modal open
-            const imagesArray = JSON.parse(this.getAttribute('data-images'));
-            modalImage.src = imagesArray[0];
-            modal.style.display = 'flex';
-        });
-    });
+        // Attach click events to dynamically added links
+        document.querySelectorAll('.main-content ul li a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Retrieve data attributes
+                const name = link.dataset.name;
+                const images = JSON.parse(link.dataset.images);
+                const descriptions = JSON.parse(link.dataset.descriptions);
+                const credits = JSON.parse(link.dataset.credits);
 
-    // Close the modal and reset the pin when the close button is clicked
-    closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
-        isModalPinned = false; // Reset the pin state when modal is closed
-    });
+                // Store them in localStorage
+                localStorage.setItem('slideshowTitle', name);
+                localStorage.setItem('slideshowImages', JSON.stringify(images));
+                localStorage.setItem('slideshowDescriptions', JSON.stringify(descriptions));
+                localStorage.setItem('slideshowCredits', JSON.stringify(credits));
+            });
+        });
+    } catch (error) {
+        console.error("Error loading JSON data:", error);
+    }
 
     // Close modal on outside click and reset the pin state
     window.onclick = function (event) {
@@ -206,31 +184,6 @@
         }
     });
 });
-
-// Get all links
-const links = document.querySelectorAll('ul li a');
-
-links.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    // Retrieve data attributes
-    const name = link.dataset.name;
-    const images = JSON.parse(link.dataset.images);
-    const descriptions = JSON.parse(link.dataset.descriptions);
-    const credits = JSON.parse(link.dataset.credits);
-
-    // Store them in localStorage
-    localStorage.setItem('slideshowTitle', name);
-    localStorage.setItem('slideshowImages', JSON.stringify(images));
-    localStorage.setItem('slideshowDescriptions', JSON.stringify(descriptions));
-    localStorage.setItem('slideshowCredits', JSON.stringify(credits));
-
-    // Redirect to slideshow.html
-    window.location.href = link.href;
-  });
-});
-
 
 </script>
 

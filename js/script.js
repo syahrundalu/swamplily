@@ -114,6 +114,17 @@ var localSwiper = new Swiper('.local-swiper', {
     loop: true, // Enable looping of slides
 });
 
+const backgroundSwiper = new Swiper('.background-swiper', {
+  loop: true, // Infinite looping
+  autoplay: {
+      delay: 5000, // Auto-slide every 5 seconds
+  },
+  navigation: {
+      nextEl: '.background-next',
+      prevEl: '.background-prev',
+  },
+});
+
   // init Isotope
   var initIsotope = function() {
     
@@ -352,6 +363,19 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
   } else {
       emailInput.setCustomValidity(''); // Clear custom error message if valid
   }
+});
+
+
+document.querySelectorAll('img').forEach(img => {
+  img.onload = () => {
+      fetch(img.src)
+          .then(response => response.blob())
+          .then(blob => {
+              if (blob.size > 500 * 1024) { // 500KB
+                  console.warn(`${img.src} is larger than 500KB`);
+              }
+          });
+  };
 });
 
 
