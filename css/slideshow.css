@@ -8,19 +8,6 @@ body {
     background-color: #EBE7CA;
   }
   
-  .slideshow-container {
-    max-width: 98vw; /* Restrict max width to viewport width */
-    max-height: 98vh; /* Restrict max height to viewport height */
-    text-align: center;
-    position: relative;
-  }
-  
-  #slideshow img {
-    max-width: 100%; /* Prevents image from exceeding modal width */
-    max-height: 95vh; /* Prevents image from exceeding viewport height */
-    width: auto; /* Maintain aspect ratio */
-    height: auto;
-  }
   
   .navigation {
     margin-top: 20px;
@@ -96,11 +83,39 @@ body {
   font-style: italic;
 }
 
-   /* Description styles */
-   #slideshow-description {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
-    color: #555;
-    margin-left: -20px;
-  }
+#slideshow-image-container {
+  width: 100%; /* Take up full width of the screen */
+  height: 95vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  position: relative; /* For credit positioning */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+#slideshow-image {
+  max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+  max-height: 100%; /* Ensure the image doesn't exceed the container's height */
+  object-fit: contain; /* Keeps the aspect ratio while fitting within the container */
+  display: block; /* Treat image as a block element */
+  margin: 0 auto;
+}
+
+#slideshow-credit {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  position: absolute;
+  bottom: 10px; /* Position the credit at the bottom of the image */
+  left: 50%;
+  transform: translateX(-50%); /* Center the credit horizontally */
+  background: rgba(255, 255, 255, 0.748); /* Optional: Add a semi-transparent background for better readability */
+  padding: 5px 10px;
+}
+
+#slideshow-description {
+  font-size: 18px;
+  color: #333;
+  margin-left: 20px; /* Description stays to the right of the image */
+}
+

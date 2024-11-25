@@ -107,38 +107,20 @@
           "images/interiorstyling/3.jpg",
           "images/interiorstyling/4.jpg",
           "images/interiorstyling/5.jpg",
-          "images/interiorstyling/6.jpg",
-          "images/interiorstyling/7.jpg",
-          "images/interiorstyling/8.jpg",
+          "images/interiorstyling/6.jpeg",
+          "images/interiorstyling/7.jpeg",
+          "images/interiorstyling/8.jpeg",
           "images/interiorstyling/9.jpg",
           "images/interiorstyling/10.jpg",
-          "images/interiorstyling/11.jpg"
+          "images/interiorstyling/11.jpeg"  
         ],
         "descriptions": [
-          "Cozy living room setup with neutral tones.",
-          "Elegant dining area with rustic charm.",
-          "Modern bedroom styling with clean lines.",
-          "Sophisticated home office design.",
-          "Charming kitchen with farmhouse vibes.",
-          "Luxurious bathroom decor and styling.",
-          "Artistic wall decor for living spaces.",
-          "Open floor plan with modern aesthetics.",
-          "Stylish furniture arrangement.",
-          "Functional yet elegant interior spaces.",
-          "A harmonious blend of textures and colors."
+          "Cozy living room setup with neutral tones."
+         
         ],
         "credits": [
-          "Photo by Lauren Hughes",
-          "Photo by Mark Rivera",
-          "Photo by Natalie Fisher",
-          "Photo by Oscar Lopez",
-          "Photo by Patrick Kelly",
-          "Photo by Quentin Young",
-          "Photo by Rachel Morris",
-          "Photo by Steve Carter",
-          "Photo by Tina Ross",
-          "Photo by Ursula Reed",
-          "Photo by Victor Hughes"
+          "Photo by Lauren Hughes"
+      
         ]
       },
       {
@@ -155,35 +137,23 @@
           "images/arrangement/9.jpg",
           "images/arrangement/10.jpg",
           "images/arrangement/11.jpg",
-          "images/arrangement/12.jpg"
+          "images/arrangement/12.jpg",
+          "images/arrangement/13.jpg",
+          "images/arrangement/14.jpg",
+          "images/arrangement/15.jpg",
+          "images/arrangement/16.jpg",
+          "images/arrangement/17.jpg",
+          "images/arrangement/18.jpg",
+          "images/arrangement/19.jpg",
+          "images/arrangement/20.jpg",
+          "images/arrangement/21.jpg",
+          "images/arrangement/22.jpg"
         ],
         "descriptions": [
-          "Elegant arrangement for corporate events.",
-          "Minimalist design with pastel tones.",
-          "Luxurious centerpiece for gala nights.",
-          "Whimsical arrangement for outdoor events.",
-          "A burst of colors for celebrations.",
-          "Rustic arrangement with natural charm.",
-          "Festive decor with bold elements.",
-          "Simple yet impactful arrangement.",
-          "Traditional arrangement with a modern twist.",
-          "Bright and cheerful floral setup.",
-          "Seasonal arrangement for year-round occasions.",
-          "Unique and creative composition for events."
+          "Elegant arrangement for corporate events."
         ],
         "credits": [
-          "Photo by Wendy Powell",
-          "Photo by Xavier Long",
-          "Photo by Yvonne Grant",
-          "Photo by Zoe Palmer",
-          "Photo by Alan Cook",
-          "Photo by Beth Gibson",
-          "Photo by Carl Fisher",
-          "Photo by Diana Moore",
-          "Photo by Evan Turner",
-          "Photo by Frank Bell",
-          "Photo by Grace King",
-          "Photo by Henry Ward"
+          "Photo by Wendy Powell"
         ]
       }
     ]
