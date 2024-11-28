@@ -1,5 +1,5 @@
-{
-    "categories": [
+
+const categoriesData =  [
       {
         "name": "Set Design",
         "images": [
@@ -115,31 +115,11 @@
           "images/interiorstyling/11.jpeg"  
         ],
         "descriptions": [
-          "Cozy living room setup with neutral tones.",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""  
+          "Cozy living room setup with neutral tones."
          
         ],
         "credits": [
-          "Photo by Lauren Hughes",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""  
+          "Photo by Lauren Hughes"
       
         ]
       },
@@ -170,54 +150,76 @@
           "images/arrangement/22.jpg"
         ],
         "descriptions": [
-          "Elegant arrangement for corporate events.",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""  
+          "Elegant arrangement for corporate events."
         ],
         "credits": [
-          "Photo by Wendy Powell",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""  
+          "Photo by Wendy Powell"
         ]
       }
-    ]
+    ];
+  
+  
+
+  function displayCategories() {
+    const container = document.getElementById('categories-container');
+    container.innerHTML = ''; // Clear the container before rendering
+  
+    categoriesData.forEach((category, index) => {
+      const categoryDiv = document.createElement('div');
+      categoryDiv.classList.add('category-card');
+  
+      categoryDiv.innerHTML = `
+        <h4>${category.name}</h4>
+        <p>${category.descriptions.join(', ')}</p>
+        <p><strong>Credits:</strong> ${category.credits.join(', ')}</p>
+        <button onclick="editCategory(${index})">Edit</button>
+        <button onclick="deleteCategory(${index})">Delete</button>
+      `;
+  
+      container.appendChild(categoryDiv);
+    });
   }
   
+  function createCategory() {
+    const name = document.getElementById('new-category-name').value;
+    const description = document.getElementById('new-category-description').value;
+  
+    if (name && description) {
+      categoriesData.push({
+        name: name,
+        images: [], // Images can be handled separately
+        descriptions: [description],
+        credits: [] // Credits can be added as well
+      });
+      displayCategories();
+      document.getElementById('new-category-name').value = '';
+      document.getElementById('new-category-description').value = '';
+    } else {
+      alert('Please provide both name and description.');
+    }
+  }
+  
+  function editCategory(index) {
+    const category = categoriesData[index];
+    const newName = prompt('Edit Category Name:', category.name);
+    const newDescription = prompt('Edit Description:', category.descriptions.join(', '));
+  
+    if (newName && newDescription) {
+      categoriesData[index] = {
+        ...category,
+        name: newName,
+        descriptions: newDescription.split(','),
+      };
+      displayCategories();
+    }
+  }
+  
+  function deleteCategory(index) {
+    if (confirm('Are you sure you want to delete this category?')) {
+      categoriesData.splice(index, 1);
+      displayCategories();
+    }
+  }
+  
+  // Initial render
+  displayCategories();

@@ -813,23 +813,51 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.floral-section {
-    min-height: 100vh; /* Full viewport height */
+
+
+
+    .floral-section .device-frame {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: url('images/device-frame.png') no-repeat center center;
+    background-size: contain;
+    aspect-ratio: 9/12;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center-align text */
-}
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .floral-section .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .floral-section .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  
+ .floral-section .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floral-section .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container */
+    display: block;
+  }
 
-.floral-section .row {
-    width: 100%; /* Ensure the row spans the full container width */
-}
-
-.floral-section .product-card {
-    max-width: 500px; /* Optional: Limit the width of product cards */
-}
-
-.floral-section .swiper-container {
-    margin-bottom: 20px; /* Add spacing below the Swiper carousel */
-}
+  .floral-section img.header {
+    width: 100%;       /* Adjust to fit the container */
+    max-width: 400px;  /* Set a consistent max width */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;
+    float: left;
+    margin: 0 auto;    /* Center the image */
+  }  

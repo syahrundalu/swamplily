@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD for Categories</title>
+    <link rel="stylesheet" href="css/crud.css">
+</head>
+<body>
+    <div id="categories-container"></div>
+    
+    <!-- Create New Category Form -->
+    <div id="create-category-form">
+        <h3>Create New Category</h3>
+        <input type="text" id="new-category-name" placeholder="Category Name" />
+        <textarea id="new-category-description" placeholder="Category Description"></textarea>
+        <button onclick="createCategory()">Create Category</button>
+    </div>
+    
+    <script src="js/crud.js"></script>
+</body>
+</html>
