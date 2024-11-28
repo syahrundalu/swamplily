@@ -123,8 +123,8 @@ var subscribtionSwiper = new Swiper('.subscription-swiper', {
       clickable: true,
   },
   navigation: {
-    nextEl: '.local-next',
-    prevEl: '.local-prev',
+    nextEl: '.subs-next',
+    prevEl: '.subs-prev',
   },
   loop: true, // Enable looping of slides
 });

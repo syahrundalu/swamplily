@@ -647,7 +647,7 @@ a:hover {
     object-fit: cover; /* Ensures the image fills the area while keeping aspect ratio */
 }
 
-.signature-next, .signature-prev, .local-next, .local-prev{
+.signature-next, .signature-prev, .local-next, .local-prev, .subs-prev, .subs-next{
     color: #fff;    
 }
 
