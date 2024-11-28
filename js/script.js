@@ -86,6 +86,7 @@
   var signatureSwiper = new Swiper('.signature-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
+    autoplay: true,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -102,7 +103,7 @@
 var localSwiper = new Swiper('.local-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
-    autoplay : false,
+    autoplay : true,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -117,7 +118,7 @@ var localSwiper = new Swiper('.local-swiper', {
 var subscribtionSwiper = new Swiper('.subscription-swiper', {
   slidesPerView: 1,
   spaceBetween: 0,
-  autoplay : false,
+  autoplay : true,
   pagination: {
       el: '.swiper-pagination',
       clickable: true,
