@@ -185,6 +185,18 @@
     });
 });
 
+const img = document.getElementById('reloadImage');
+  let retries = 3; // Jumlah percobaan
+  img.onerror = function() {
+    if (retries > 0) {
+      retries--;
+      setTimeout(() => {
+        img.src = img.src + '?reload=' + new Date().getTime(); // Tambahkan query string agar browser reload
+      }, 1000); // Coba lagi setelah 1 detik
+    } else {
+      img.alt = 'Gambar tidak dapat dimuat.';
+    }
+  };
 </script>
 
 </body>

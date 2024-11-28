@@ -22,6 +22,7 @@
     <h1 id="slideshow-title"></h1>
     <div class="slideshow-container d-flex align-items-center">
       <div id="slideshow-image-container">
+        <div id="loading-spinner" style="display: none; font-style: italic;">Loading...</div>
         <img id="slideshow-image" src="" alt="Slideshow Image">
         <p id="slideshow-credit" class="text-muted" style="font-size: 14px; margin-top: 10px;"></p>
       </div>
@@ -38,58 +39,70 @@
 </body>
 
 <script>
-     // Retrieve data from localStorage
-const title = localStorage.getItem('slideshowTitle') || 'Default Slideshow';
+    const title = localStorage.getItem('slideshowTitle') || 'Default Slideshow';
 const images = JSON.parse(localStorage.getItem('slideshowImages')) || [];
 const descriptions = JSON.parse(localStorage.getItem('slideshowDescriptions')) || [];
 const credits = JSON.parse(localStorage.getItem('slideshowCredits')) || [];
 
-// Get DOM elements
-const slideshow = document.getElementById('slideshow');
-const description = document.getElementById('slideshow-description');
 const slideshowTitle = document.getElementById('slideshow-title');
-
-// Set title
 slideshowTitle.innerText = title;
 
 if (images.length > 0) {
   let currentIndex = 0;
 
-  function updateSlideshow() {
-  // Update the image source
-  const slideshowImage = document.getElementById('slideshow-image');
-  slideshowImage.src = images[currentIndex];
-  slideshowImage.alt = descriptions[currentIndex] || 'Slideshow Image';
-
-  // Update the credit
-  const slideshowCredit = document.getElementById('slideshow-credit');
-  const creditText = credits[currentIndex] || '';
-  if (creditText.trim() === '') {
-    slideshowCredit.style.display = 'none'; // Hide the credit if empty
-  } else {
-    slideshowCredit.style.display = 'block'; // Show the credit if not empty
-    slideshowCredit.innerText = creditText;
+  function preloadImage(src) {
+      const img = new Image();
+      img.src = src;
   }
 
-  // Update the description
-  const descriptionElement = document.getElementById('slideshow-description');
-  descriptionElement.innerHTML = `<p>${descriptions[currentIndex] || ''}</p>`;
-}
-  // Initialize the slideshow
+  function updateSlideshow() {
+      const slideshowImage = document.getElementById('slideshow-image');
+      const loadingSpinner = document.getElementById('loading-spinner');
+
+      loadingSpinner.style.display = 'block';
+      slideshowImage.style.display = 'none';
+
+      slideshowImage.src = images[currentIndex];
+      slideshowImage.alt = descriptions[currentIndex] || 'Slideshow Image';
+
+      slideshowImage.onload = () => {
+          loadingSpinner.style.display = 'none';
+          slideshowImage.style.display = 'block';
+      };
+
+      slideshowImage.onerror = () => {
+          slideshowImage.src = 'images/placeholder.jpg';
+          slideshowImage.alt = 'Image not available';
+          loadingSpinner.style.display = 'none';
+          slideshowImage.style.display = 'block';
+      };
+
+      const slideshowCredit = document.getElementById('slideshow-credit');
+      const creditText = credits[currentIndex] || '';
+      slideshowCredit.style.display = creditText.trim() === '' ? 'none' : 'block';
+      slideshowCredit.innerText = creditText;
+
+      const descriptionElement = document.getElementById('slideshow-description');
+      descriptionElement.innerHTML = `<p>${descriptions[currentIndex] || ''}</p>`;
+  }
+
   updateSlideshow();
 
-  // Navigation buttons
   document.getElementById('prev-button').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateSlideshow();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      preloadImage(images[(currentIndex - 1 + images.length) % images.length]);
+      preloadImage(images[(currentIndex + 1) % images.length]);
+      updateSlideshow();
   });
 
   document.getElementById('next-button').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateSlideshow();
+      currentIndex = (currentIndex + 1) % images.length;
+      preloadImage(images[(currentIndex - 1 + images.length) % images.length]);
+      preloadImage(images[(currentIndex + 1) % images.length]);
+      updateSlideshow();
   });
 } else {
-  slideshow.innerHTML = '<p>No images available</p>';
+  document.getElementById('slideshow').innerHTML = '<p>No images available</p>';
 }
 
 </script>
