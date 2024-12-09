@@ -56,37 +56,49 @@ if (images.length > 0) {
   }
 
   function updateSlideshow() {
-      const slideshowImage = document.getElementById('slideshow-image');
-      const loadingSpinner = document.getElementById('loading-spinner');
+    const slideshowImage = document.getElementById('slideshow-image');
+    const loadingSpinner = document.getElementById('loading-spinner');
 
-      loadingSpinner.style.display = 'block';
-      slideshowImage.style.display = 'none';
+    loadingSpinner.style.display = 'block';
+    slideshowImage.style.display = 'none';
 
-      slideshowImage.src = images[currentIndex];
-      slideshowImage.alt = descriptions[currentIndex] || 'Slideshow Image';
+    // Update the image
+    slideshowImage.src = images[currentIndex];
+    slideshowImage.alt = descriptions[currentIndex] || 'Slideshow Image';
 
-      slideshowImage.onload = () => {
-          loadingSpinner.style.display = 'none';
-          slideshowImage.style.display = 'block';
-      };
+    // Handle image loading and errors
+    slideshowImage.onload = () => {
+        loadingSpinner.style.display = 'none';
+        slideshowImage.style.display = 'block';
+    };
 
-      slideshowImage.onerror = () => {
-          slideshowImage.src = 'images/placeholder.jpg';
-          slideshowImage.alt = 'Image not available';
-          loadingSpinner.style.display = 'none';
-          slideshowImage.style.display = 'block';
-      };
+    slideshowImage.onerror = () => {
+        slideshowImage.src = 'images/placeholder.jpg';
+        slideshowImage.alt = 'Image not available';
+        loadingSpinner.style.display = 'none';
+        slideshowImage.style.display = 'block';
+    };
 
-      const slideshowCredit = document.getElementById('slideshow-credit');
-      const creditText = credits[currentIndex] || '';
-      slideshowCredit.style.display = creditText.trim() === '' ? 'none' : 'block';
-      slideshowCredit.innerText = creditText;
+    // Update the credit text
+    const slideshowCredit = document.getElementById('slideshow-credit');
+    const creditText = credits[currentIndex] || '';
+    slideshowCredit.style.display = creditText.trim() === '' ? 'none' : 'block';
+    slideshowCredit.innerText = creditText;
 
-      const descriptionElement = document.getElementById('slideshow-description');
-      descriptionElement.innerHTML = `<p>${descriptions[currentIndex] || ''}</p>`;
-  }
+    // Update the description text
+    const descriptionElement = document.getElementById('slideshow-description');
+    const descriptionText = descriptions[currentIndex] || '';
 
-  updateSlideshow();
+    if (descriptionText.trim() === '') {
+        descriptionElement.style.display = 'none'; // Hide description if empty
+    } else {
+        descriptionElement.style.display = 'block'; // Show description if not empty
+        descriptionElement.innerHTML = `<p>${descriptionText}</p>`;
+    }
+}
+
+updateSlideshow();
+
 
   document.getElementById('prev-button').addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
