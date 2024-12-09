@@ -611,6 +611,9 @@ a:hover {
     .main-title {
         font-size: 2rem;
     }
+    .contact-section {
+        padding: 0px 0px;
+    }
 }
 
 .shop img.header {
@@ -639,6 +642,24 @@ a:hover {
 .shop input, .shop select{
     height: 50px;
     border-radius: 3px;
+}
+
+.signature-thumbs-swiper {
+    margin-top: 20px; /* Space between the main image swiper and the thumbnails */
+    padding-bottom: 20px; /* Add some padding to the bottom */
+    
+}
+
+.signature-thumbs-swiper .swiper-slide {
+    opacity: 0.6; /* Make thumbnails slightly transparent */
+}
+.signature-thumbs-swiper .swiper-slide img{
+    height: 15% !important;
+}
+
+.signature-thumbs-swiper .swiper-slide-thumb-active {
+    opacity: 1; /* Highlight the active thumbnail */
+    border: 2px solid #fff; /* Add a border to the active thumbnail */
 }
 
 .contact-section img {

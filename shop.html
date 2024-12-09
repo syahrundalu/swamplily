@@ -48,14 +48,27 @@
     
 
 <div class="container"> 
-    <div class="logo-nav">
-        <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo"></a>
-        <ul class="nav">
-            <li><a href="about.html">About</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="shop.html">Shop</a></li>
-        </ul>
-    </div> 
+  <div class="logo-nav d-flex justify-content-between align-items-center py-3">
+    <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo" style="max-width: 120px;"></a>
+    <ul class="nav d-none d-md-flex">
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="shop.html">Shop</a></li>
+    </ul>
+    <!-- Hamburger Menu for Mobile -->
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+<!-- Navbar collapses on mobile -->
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="shop.html">Shop</a></li>
+    </ul>
+</div>
+
     
     <!-- Header Section -->
     <header class="container">
@@ -67,70 +80,64 @@ Please note that there will be no two similar arrangements since the flowers may
     </header>
 
 <!-- Product Section -->
-<section class="product-section container">
-    <div class="row">
-        <!-- Product 1: Signature -->
-        <div class="col-md-6">
-            <div class="product-card">
-                <!-- Swiper Container for Signature -->
-                <div class="swiper-container signature-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="images/about/1.jpg" alt="Signature Arrangement" class="img-fluid">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/about/2.jpg" alt="Signature Arrangement 2" class="img-fluid">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/about/3.jpg" alt="Signature Arrangement" class="img-fluid">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/about/4.jpg" alt="Signature Arrangement 2" class="img-fluid">
-                        </div>
-                        <!-- Add more slides as needed -->
-                    </div>
-                 
-                    <div class="swiper-button-next signature-next"></div>
-                    <div class="swiper-button-prev signature-prev"></div>
-                </div>
-                <h3>Signature</h3>
-                <p>Mix and match! These arrangements are composed of both imported and local floral ingredients.</p>
-                <p>Bouquet starts from 775.000 IDR<br>Vase starts from 900.000 IDR</p>
-            </div>
-        </div>
+<section class="product-section container py-5">
+  <div class="row">
+      <!-- Product 1: Signature -->
+      <div class="col-12 col-md-6">
+          <div class="product-card">
+              <div class="swiper-container signature-swiper">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                          <img src="images/about/1.jpg" alt="Signature Arrangement" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="images/about/2.jpg" alt="Signature Arrangement 2" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="images/about/3.jpg" alt="Signature Arrangement" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="images/about/4.jpg" alt="Signature Arrangement 2" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="swiper-button-next signature-next"></div>
+                  <div class="swiper-button-prev signature-prev"></div>
+              </div>
+              <h3>Signature</h3>
+              <p>Mix and match! These arrangements are composed of both imported and local floral ingredients.</p>
+              <p>Bouquet starts from 775.000 IDR<br>Vase starts from 900.000 IDR</p>
+          </div>
+      </div>
 
-        <!-- Product 2: Local -->
-        <div class="col-md-6">
-            <div class="product-card">
-                <!-- Swiper Container for Local -->
-                <div class="swiper-container local-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="images/about/1.jpg" alt="Signature Arrangement" class="img-fluid">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/about/2.jpg" alt="Signature Arrangement 2" class="img-fluid">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/about/3.jpg" alt="Signature Arrangement" class="img-fluid">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/about/4.jpg" alt="Signature Arrangement 2" class="img-fluid">
-                        </div>
-                        <!-- Add more slides as needed -->
-                    </div>
-                   
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-next local-next"></div>
-                    <div class="swiper-button-prev local-prev"></div>
-                </div>
-                <h3>Local</h3>
-                <p>Channelling our love with Indonesia’s vibrant and funky flowers and plants, these arrangements are completely composed using locally sourced floral ingredients.</p>
-                <p>Bouquet starts from 475.000 IDR<br>Vase starts from 650.000 IDR</p>
-            </div>
-        </div>
-    </div>
+      <!-- Product 2: Local -->
+      <div class="col-12 col-md-6">
+          <div class="product-card">
+              <div class="swiper-container local-swiper">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                          <img src="images/about/1.jpg" alt="Signature Arrangement" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="images/about/2.jpg" alt="Signature Arrangement 2" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="images/about/3.jpg" alt="Signature Arrangement" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="images/about/4.jpg" alt="Signature Arrangement 2" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="swiper-button-next local-next"></div>
+                  <div class="swiper-button-prev local-prev"></div>
+              </div>
+              <h3>Local</h3>
+              <p>Channelling our love with Indonesia’s vibrant and funky flowers and plants, these arrangements are completely composed using locally sourced floral ingredients.</p>
+              <p>Bouquet starts from 475.000 IDR<br>Vase starts from 650.000 IDR</p>
+          </div>
+      </div>
+  </div>
 </section>
+
 
 
 </div>
@@ -175,12 +182,12 @@ Please note that there will be no two similar arrangements since the flowers may
     <!-- Right Column: Text Section -->
     <div class="col-lg-6 col-md-12 text-center text-lg-start right-side">
       <div class="row">
-      <img class="header" src="images/header/floral.png" alt="">
-      <p class="mb-4">
-        Our monthly subscription comes in 4 vase arrangements which can be delivered accordingly within a month.
-      </p>
-      <p>The subscription starts from 2.500.000 IDR per month.</p>
-    </div>
+        <img class="header" src="images/header/floral.png" alt="">
+        <p class="mb-4">
+          Our monthly subscription comes in 4 vase arrangements which can be delivered accordingly within a month.
+        </p>
+        <p>The subscription starts from 2.500.000 IDR per month.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -189,69 +196,67 @@ Please note that there will be no two similar arrangements since the flowers may
 
 
 
-<!-- Contact Form Section -->
+
 <section class="contact-section container col-10">
-    <img class="header" src="images/header/styling.png" alt="">
+  <img class="header" src="images/header/styling.png" alt="">
+  <p class="styling-text">
+      This service is available for small to medium scale projects with formats range from table centre-pieces, set designs, botanical installations, and others.
+      <br> 
+      Any form of collaborations are very welcome, please send us a message!
+  </p>
 
-    <p class="styling-text">
-        This service is available for small to medium scale projects with formats range from table centre-pieces, set designs, botanical installations, and others.
-        <br> 
-        Any form of collaborations are very welcome, please send us a message!
-
-    </p>
-
-    <div class="container my-4">
-        <form id="emailForm" action="/submit" method="POST">
+  <div class="container my-4">
+      <form id="emailForm" action="/submit" method="POST">
           <div class="mb-3">
-            <label for="first-name" class="form-label">Name (required)</label>
-            <div class="row">
-              <div class="col-md-6">
-                <input type="text" id="first-name" name="first-name" class="form-control" placeholder="First Name" required>
+              <label for="first-name" class="form-label">Name (required)</label>
+              <div class="row">
+                  <div class="col-12 col-md-6">
+                      <input type="text" id="first-name" name="first-name" class="form-control" placeholder="First Name" required>
+                  </div>
+                  <div class="col-12 col-md-6">
+                      <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Last Name" required>
+                  </div>
               </div>
-              <div class="col-md-6">
-                <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Last Name" required>
-              </div>
-            </div>
           </div>
-      
+
           <div class="mb-3">
-            <label for="email" class="form-label">Email (required)</label>
-            <input type="email" placeholder="Your email" id="email" name="email" class="form-control" required>
+              <label for="email" class="form-label">Email (required)</label>
+              <input type="email" placeholder="Your email" id="email" name="email" class="form-control" required>
           </div>
-      
+
           <div class="mb-3">
-            <label for="service-date" class="form-label">Desired date of service (required)</label>
-            <input type="date" id="service-date" name="service-date" class="form-control" required>
+              <label for="service-date" class="form-label">Desired date of service (required)</label>
+              <input type="date" id="service-date" name="service-date" class="form-control" required>
           </div>
-      
+
           <div class="mb-3">
-            <label for="location" class="form-label">Location (required)</label>
-            <select id="location" name="location" class="form-select" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="location1">Location 1</option>
-              <option value="location2">Location 2</option>
-            </select>
+              <label for="location" class="form-label">Location (required)</label>
+              <select id="location" name="location" class="form-select" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="location1">Location 1</option>
+                  <option value="location2">Location 2</option>
+              </select>
           </div>
-      
+
           <div class="mb-3">
-            <label for="service" class="form-label">Service (required)</label>
-            <select id="service" name="service" class="form-select" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="service1">Signature</option>
-              <option value="service2">Local</option>
-              <option value="service2">Floral Subscription</option>
-              <option value="service2">Styling And Curation</option>
-            </select>
+              <label for="service" class="form-label">Service (required)</label>
+              <select id="service" name="service" class="form-select" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="service1">Signature</option>
+                  <option value="service2">Local</option>
+                  <option value="service3">Floral Subscription</option>
+                  <option value="service4">Styling And Curation</option>
+              </select>
           </div>
-      
+
           <div class="mb-3">
-            <label for="message" class="form-label">Tell us a little more (required)</label>
-            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+              <label for="message" class="form-label">Tell us a little more (required)</label>
+              <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
           </div>
-      
+
           <button type="submit" class="btn btn-primary w-100">SUBMIT</button>
-        </form>
-      </div>
+      </form>
+  </div>
 </section>
 
 <!-- Footer -->

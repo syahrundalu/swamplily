@@ -99,6 +99,7 @@
     loop: true, // Enable looping of slides
 });
 
+
 // Initialize Swiper for Local
 var localSwiper = new Swiper('.local-swiper', {
     slidesPerView: 1,
