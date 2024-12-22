@@ -85,7 +85,7 @@ body {
 
 #slideshow-image-container {
   width: 100%; /* Full width */
-  height: 92vh; /* Adjust to content */
+  height: 90vh; /* Adjust to content */
   align-items: center; /* Vertically center the credit */
   justify-content: center; /* Center the content */
   text-align: center;
@@ -110,7 +110,6 @@ body {
 #slideshow-description {
   font-size: 14px;
   color: #333;
-  margin-left: 20px; /* Description stays to the right of the image */
   width: 30vw;
   text-align:left;
 }
