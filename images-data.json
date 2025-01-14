@@ -149,7 +149,6 @@
           "images/arrangement/1.jpg",
           "images/arrangement/2.jpg",
           "images/arrangement/3.jpg",
-          "images/arrangement/4.jpg",
           "images/arrangement/5.jpg",
           "images/arrangement/6.jpg",
           "images/arrangement/7.jpg",
@@ -157,18 +156,14 @@
           "images/arrangement/9.jpg",
           "images/arrangement/10.jpg",
           "images/arrangement/13.jpg",
-          "images/arrangement/15.jpg",
           "images/arrangement/16.jpg",
           "images/arrangement/17.jpg",
-          "images/arrangement/20.jpg"
+          "images/arrangement/20.jpg",
+          "images/arrangement/23.jpg",
+          "images/arrangement/24.jpg",
+          "images/arrangement/25.jpg"
         ],
         "descriptions": [
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
           "",
           "",
           "",
@@ -202,13 +197,7 @@
           "",
           "",
           "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""  
+          ""
         ]
       }
     ]
