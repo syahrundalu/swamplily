@@ -877,7 +877,7 @@ a:hover {
 
 .floral-section img.header {
     width: 100%;       /* Adjust to fit the container */
-    max-width: 400px;  /* Set a consistent max width */
+    max-width: 500px;  /* Set a consistent max width */
     height: auto;      /* Maintain aspect ratio */
     display: block;
     float: left;
