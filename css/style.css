@@ -649,7 +649,27 @@ a:hover {
 }
 
 .shop .form-control::placeholder {
-    color: #111;
+    color: gray;
+}
+
+#service-date::-webkit-datetime-edit {
+    color: gray; /* Change to your preferred color */
+    opacity: 0.6; /* Adjust opacity if needed */
+}
+
+/* For Firefox */
+#service-date::placeholder {
+    color: gray; /* Change to your preferred color */
+    opacity: 0.6;
+}
+
+#service:invalid {
+    color: gray; /* Change placeholder text color */
+}
+
+/* Ensure selected options have a different color */
+#service option {
+    color: black; /* Change selected text color */
 }
 
 .shop textarea {
