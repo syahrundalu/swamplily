@@ -131,6 +131,21 @@ var subscribtionSwiper = new Swiper('.subscription-swiper', {
   loop: true, // Enable looping of slides
 });
 
+var styleSwiper = new Swiper('.styling-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  autoplay : true,
+  pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+  },
+  navigation: {
+    nextEl: '.style-next',
+    prevEl: '.style-prev',
+  },
+  loop: true, // Enable looping of slides
+});
+
 const backgroundSwiper = new Swiper('.background-swiper', {
   loop: true, // Infinite looping
   autoplay: {
