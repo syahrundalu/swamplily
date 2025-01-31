@@ -10,6 +10,15 @@
         height: 100vh;
     }
 
+    .banner .logodancing {
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 0px;
+        }
+
     .link-landing ul {
         list-style: none;
         padding: 0;
@@ -35,7 +44,7 @@
         transform: translateX(-50%); /* Center it */
         width: auto; /* Ensure it doesn't stretch too much */
         text-align: center;
-        z-index: 1000; /* Keep it above other content */
+        z-index: 99; /* Keep it above other content */
     }
 
     /* About */
@@ -66,7 +75,7 @@
         flex-direction: row; /* Keep logo and nav in the same row */
         justify-content: space-between; /* Keep logo on left, nav on right */
         align-items: center;
-        z-index: 999;
+        z-index: 99;
         padding : 5px 20px;
     }
 
@@ -180,7 +189,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: -100px;
+        margin-top: -50px;
         margin-bottom: 50px;
     }
 

@@ -330,7 +330,7 @@ a:hover {
     width: 100%; /* Full width of the viewport */
     height: 100vh; /* Full height of the viewport */
     background: #E3DABB; /* Background color */
-    z-index: 500; /* Ensure it appears above all other content */
+    z-index: 999; /* Ensure it appears above all other content */
     display: flex; /* Flex container for centering */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
