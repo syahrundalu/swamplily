@@ -1,0 +1,40 @@
+@media (max-width: 768px) { /* Apply only on mobile screens */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+    }    
+
+    .banner {
+        height: 100vh;
+    }
+
+    .link-landing ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .link-landing li {
+        display: inline;
+    }
+
+    .link-landing a {
+        text-decoration: none;
+        color: black; /* Adjust color */
+        font-size: 16px;
+    }
+    .link-landing {
+        position: fixed; /* Keep it at the bottom */
+        bottom: 200px; /* 20px from the bottom */
+        left: 50%;
+        transform: translateX(-50%); /* Center it */
+        width: auto; /* Ensure it doesn't stretch too much */
+        text-align: center;
+        z-index: 1000; /* Keep it above other content */
+    }
+}

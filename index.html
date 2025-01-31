@@ -35,6 +35,7 @@
    <link rel="stylesheet" href="vendor/aos/aos.css">
   <!--style sheet-->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile-style.css">
   
   
 
@@ -50,32 +51,6 @@
         <img src="images/buaya_motion.GIF" alt="">
       </div>
     </div>
-
-    <!-- Header -->
-    
-    <!-- <header id="navbar" class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="images/logo.PNG" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-      </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Works</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </header> -->
   
 
       <section>
@@ -112,11 +87,17 @@
             bannerbackground.style.transform = `translateY(${value * 0.4}px)`;
             logodancing.style.transform = `translateY(${value * 0.4}px)`;
             logodancing.style.opacity = 1 - value * 0.001;
-            logolanding.style.transform = `translateY(${value * -0.09}px)`;
-          }
-      
-          window.addEventListener('scroll', function(){
-            requestAnimationFrame(parallaxEffect);
+
+            // Apply the parallax effect only on larger screens
+            if (window.innerWidth > 768) {
+                logolanding.style.transform = `translateY(${value * -0.09}px)`;
+            } else {
+                logolanding.style.transform = "none"; // Remove effect on mobile
+            }
+}
+
+          window.addEventListener("scroll", function () {
+              requestAnimationFrame(parallaxEffect);
           });
         </script>
   </section>

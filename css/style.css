@@ -195,16 +195,7 @@ h2,h3,h4,h5,h6 {
         margin-top: 0px;
         }
 
-        .banner {
-            height: 100vh;
-        }
-
-        .link-landing ul {
-            display: flex;
-            justify-content: center; /* Center the items */
-            gap: 20px;
-            bottom : 2000px;
-          }
+       
 }
 
 p.a {
