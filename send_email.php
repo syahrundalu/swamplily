@@ -38,10 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                        <strong>Service:</strong> $service<br>
                        <strong>Message:</strong> $message";
 
-        $mail->send();
+        if (!$mail->send()) {
+            throw new Exception("Mailer Error: " . $mail->ErrorInfo);
+        }
         echo json_encode(["message" => "Email sent successfully!"]);
     } catch (Exception $e) {
-        echo json_encode(["message" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+        echo json_encode(["message" => "Error: " . $e->getMessage()]);
     }
 }
 ?>

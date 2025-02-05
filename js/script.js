@@ -386,18 +386,20 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
   }
 });
 
+
 document.getElementById("emailForm").addEventListener("submit", async function(event) {
   event.preventDefault(); // Mencegah reload halaman
 
   const formData = new FormData(this); // Ambil data form
 
   try {
-      const response = await fetch("send_email.php", {
+      const response = await fetch("../send_email.php", {
           method: "POST",
           body: formData
       });
 
       const result = await response.json();
+      console.log(result); // Tampilkan response server di console
 
       // Menampilkan alert dengan SweetAlert2
       if (result.message === "Email sent successfully!") {
@@ -422,5 +424,4 @@ document.getElementById("emailForm").addEventListener("submit", async function(e
       });
   }
 });
-
 
