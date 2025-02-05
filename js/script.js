@@ -386,5 +386,41 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
   }
 });
 
+document.getElementById("emailForm").addEventListener("submit", async function(event) {
+  event.preventDefault(); // Mencegah reload halaman
+
+  const formData = new FormData(this); // Ambil data form
+
+  try {
+      const response = await fetch("send_email.php", {
+          method: "POST",
+          body: formData
+      });
+
+      const result = await response.json();
+
+      // Menampilkan alert dengan SweetAlert2
+      if (result.message === "Email sent successfully!") {
+          Swal.fire({
+              icon: 'success',
+              title: 'Success!',
+              text: 'Your message has been sent successfully.',
+          });
+      } else {
+          Swal.fire({
+              icon: 'error',
+              title: 'Error!',
+              text: result.message,
+          });
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong. Please try again later.',
+      });
+  }
+});
 
 
