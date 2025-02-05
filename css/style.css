@@ -644,13 +644,20 @@ a:hover {
 
 #service-date::-webkit-datetime-edit {
     color: gray; /* Change to your preferred color */
-    opacity: 0.6; /* Adjust opacity if needed */
 }
-
 /* For Firefox */
 #service-date::placeholder {
     color: gray; /* Change to your preferred color */
-    opacity: 0.6;
+}
+
+/* Setelah input dimasukkan, warna teks berubah menjadi hitam */
+#service-date {
+    color: #111; /* Text color after input */
+}
+
+/* Opsional: ubah warna teks saat input dalam fokus */
+#service-date:focus {
+    color: #111; /* Color when input is focused */
 }
 
 #service:invalid {

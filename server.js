@@ -25,7 +25,7 @@ app.post("/submit", async (req, res) => {
   const { firstName, lastName, email, serviceDate, service, message } = req.body;
 
   const mailOptions = {
-    from: "info@swamplily.io",
+    from: "${email}",
     to: "info@swamplily.io", // Email tujuan (dapat dikirim ke email yang sama atau lainnya)
     subject: "New Service Request from Swamp Lily Contact Form",
     text: `
