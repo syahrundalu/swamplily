@@ -426,3 +426,18 @@ document.getElementById("emailForm").addEventListener("submit", async function(e
   }
 });
 
+const controller = new AbortController();
+const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 detik
+
+try {
+    const response = await fetch("../send_email.php", {
+        method: "POST",
+        body: formData,
+        signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+    // Lanjutkan dengan respons
+} catch (error) {
+    console.error("Request failed:", error);
+    alert("Request timed out.");
+}
