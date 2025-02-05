@@ -337,8 +337,9 @@ a:hover {
 }
 
 #loader img {
-    width: 100%; /* Adjust the size of the preloader image */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Menjadikan gambar 70% dari lebar layar */
+    max-width: 400px; /* Opsional: Batasi ukuran maksimum agar tidak terlalu besar di layar besar */
+    height: auto; /* Menjaga rasio aspek */
 }
 
 .no-js #preloader {

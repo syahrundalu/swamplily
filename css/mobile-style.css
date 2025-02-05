@@ -4,7 +4,13 @@
         padding: 0;
         width: 100%;
         overflow-x: hidden; /* Prevents horizontal scrolling */
-    }    
+    }
+
+    #loader img {
+        width: 100%; /* Menjadikan gambar 70% dari lebar layar */
+        max-width: 300px; /* Opsional: Batasi ukuran maksimum agar tidak terlalu besar di layar besar */
+        height: auto; /* Menjaga rasio aspek */
+    }
 
     .banner {
         height: 100vh;
@@ -53,6 +59,18 @@
         height: auto; /* Adjust height for small screens */
     }
 
+    .about .left-section {
+        height: 60vh; /* Mengatur tinggi menjadi 60% dari viewport height */
+        overflow: hidden; /* Mencegah konten meluap jika terlalu besar */
+    }
+
+    .about .swiper-slide img {
+        width: 100%;         /* Full width of the slide */
+        height: 80vh;      /* Set a fixed height */
+        object-fit: cover;  /* Maintain aspect ratio and cover the space */
+    }
+    
+
     .left-section, .right-section {
         width: 100%;
         flex: none; /* Remove equal height distribution */
@@ -69,14 +87,17 @@
     }
 
     .about .logo-nav {
-        position: fixed;
-        top: 100px;
         background: #EBE7CA;
-        flex-direction: row; /* Keep logo and nav in the same row */
-        justify-content: space-between; /* Keep logo on left, nav on right */
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 0px;
+        width: 100%;
+        padding: 10px 20px; /* Sesuaikan padding */
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        z-index: 99;
-        padding : 5px 20px;
+        z-index: 99; /* Pastikan elemen selalu di atas */
     }
 
     .nav {
@@ -127,31 +148,31 @@
 
     .main-content li:nth-child(1) {
     --i: 1;
-}
+    }
 
-.main-content li:nth-child(2) {
-    --i: 2;
-}
+    .main-content li:nth-child(2) {
+        --i: 2;
+    }
 
-.main-content li:nth-child(3) {
-    --i: 3;
-}
+    .main-content li:nth-child(3) {
+        --i: 3;
+    }
 
-.main-content li:nth-child(4) {
-    --i: 4;
-}
+    .main-content li:nth-child(4) {
+        --i: 4;
+    }
 
-.main-content li:nth-child(5) {
-    --i: 5;
-}
+    .main-content li:nth-child(5) {
+        --i: 5;
+    }
 
-.main-content li:nth-child(6) {
-    --i: 6;
-}
+    .main-content li:nth-child(6) {
+        --i: 6;
+    }
 
-.work .footer {
-    width: 100%;
-}
+    .work .footer {
+        width: 100%;
+    }
 
     /* Shop */
     .shop header p {

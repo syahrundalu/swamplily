@@ -17,17 +17,19 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
   <link rel="stylesheet" href="css/slideshow.css">
+  <link rel="stylesheet" href="css/mobile-style.css">
+
 </head>
-<body>
+<body class="slideshow">
     <h1 id="slideshow-title"></h1>
     <div class="slideshow-container d-flex align-items-center">
       <div id="slideshow-image-container">
         <div id="loading-spinner" style="display: none; font-style: italic;">Loading...</div>
-        <img id="slideshow-image" src="" alt="Slideshow Image">
-        <p id="slideshow-credit" class="text-muted"></p>
+        <img id="slideshow-image" src="" alt="Slideshow Image" class="order-sm-1">
+        <p id="slideshow-credit" class="text-muted order-sm-2"></p>
         
       </div>
-      <div id="slideshow-description" style="margin-left: 20px;"></div>
+      <div id="slideshow-description" class="order-sm-3"></div>
       
     </div>
     
