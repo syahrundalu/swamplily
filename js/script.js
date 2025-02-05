@@ -395,7 +395,8 @@ document.getElementById("emailForm").addEventListener("submit", async function(e
   try {
       const response = await fetch("../send_email.php", {
           method: "POST",
-          body: formData
+          body: formData,
+          timeout: 10000 // Timeout dalam milidetik (misalnya, 10 detik)
       });
 
       const result = await response.json();
