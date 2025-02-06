@@ -632,6 +632,8 @@ a:hover {
 
 .shop header p {
     padding: 0px 100px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .shop {
@@ -640,6 +642,11 @@ a:hover {
 
 .shop .form-control::placeholder {
     color: gray;
+}
+
+.shop .product-section p, .shop .floral-section p, .shop .style-section p, .shop .terms-section p {
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 #service-date::-webkit-datetime-edit {

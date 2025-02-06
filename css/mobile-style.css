@@ -82,8 +82,8 @@
 
     .right-section {
         order: 2; /* Show the text section below */
-        text-align: center;
-        padding: 0 0;
+        text-align: justify;
+        padding: 10px;
     }
 
     .about .logo-nav {
@@ -141,9 +141,9 @@
     .main-content li {
         position: absolute;
         left: 0; /* Start from the left */
-        transform: translateX(calc(var(--i) * 1px)) translateY(calc(var(--i) * 30px));
+        transform: translateX(calc(var(--i) * 0px)) translateY(calc(var(--i) * 30px));
         /* Adjust 20px and 30px to change diagonal spacing */
-        left: -50px;
+        left: -80px;
     }
 
     .main-content li:nth-child(1) {
@@ -176,7 +176,8 @@
 
     /* Shop */
     .shop header p {
-        padding: 0px 20px;
+        padding: 30px 20px;
+        text-align: justify;
     }
 
     .shop img.header {
@@ -213,5 +214,7 @@
         margin-top: -50px;
         margin-bottom: 50px;
     }
-
+    .contact-section {
+        padding: 0px 0px;
+    }
 }
