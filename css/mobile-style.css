@@ -84,6 +84,8 @@
         order: 2; /* Show the text section below */
         text-align: justify;
         padding: 10px;
+        justify-content: center;
+        align-items: center;
     }
 
     .about .logo-nav {
@@ -128,12 +130,15 @@
     }
 
     .right-section .content {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Menengahkan secara vertikal */
+        align-items: center; /* Menengahkan secara horizontal */
     }
 
 
     .right-section .content img{
-        width: 80%;
+        width: 70%;
     }
 
     /* Main Content - Work */
