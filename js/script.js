@@ -384,7 +384,7 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
 });
 
 document.getElementById("emailForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent default form submission
   
   let formData = new FormData(this);
   
@@ -395,13 +395,28 @@ document.getElementById("emailForm").addEventListener("submit", function(event) 
   .then(response => response.json())
   .then(data => {
       if (data.status === "success") {
-          Swal.fire("Success", data.message, "success");
+          Swal.fire({
+              title: "Success!",
+              text: data.message,
+              icon: "success",
+              confirmButtonText: "OK"
+          });
           document.getElementById("emailForm").reset();
       } else {
-          Swal.fire("Error", data.message, "error");
+          Swal.fire({
+              title: "Error!",
+              text: data.message,
+              icon: "error",
+              confirmButtonText: "Try Again"
+          });
       }
   })
   .catch(error => {
-      Swal.fire("Error", "Something went wrong!", "error");
+      Swal.fire({
+          title: "Error!",
+          text: "Something went wrong. Please try again.",
+          icon: "error",
+          confirmButtonText: "OK"
+      });
   });
 });
