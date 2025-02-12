@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
         
-        $mail->setFrom($email, "$firstName $lastName");
+        $mail->setFrom('info@swamplily.io', 'Swamplily Contact');
+        $mail->addReplyTo($email, "$firstName $lastName"); // Tambahkan Reply-To
         $mail->addAddress('info@swamplily.io');
         
         $mail->isHTML(true);
