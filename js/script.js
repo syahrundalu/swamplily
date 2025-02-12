@@ -383,42 +383,25 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
   }
 });
 
-
-document.getElementById("emailForm").addEventListener("submit", async function(event) {
-  event.preventDefault(); // Mencegah reload halaman
-
-  const formData = new FormData(this); // Ambil data form
-
-  try {
-      const response = await fetch("../send_email.php", {
-          method: "POST",
-          body: formData,
-          timeout: 10000 // Timeout dalam milidetik (misalnya, 10 detik)
-      });
-
-      const result = await response.json();
-      console.log(result); // Tampilkan response server di console
-
-      // Menampilkan alert dengan SweetAlert2
-      if (result.message === "Email sent successfully!") {
-          Swal.fire({
-              icon: 'success',
-              title: 'Success!',
-              text: 'Your message has been sent successfully.',
-          });
+document.getElementById("emailForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  let formData = new FormData(this);
+  
+  fetch("../send_email.php", {
+      method: "POST",
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.status === "success") {
+          Swal.fire("Success", data.message, "success");
+          document.getElementById("emailForm").reset();
       } else {
-          Swal.fire({
-              icon: 'error',
-              title: 'Error!',
-              text: result.message,
-          });
+          Swal.fire("Error", data.message, "error");
       }
-  } catch (error) {
-      console.error('Error:', error);
-      Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong. Please try again later.',
-      });
-  }
+  })
+  .catch(error => {
+      Swal.fire("Error", "Something went wrong!", "error");
+  });
 });

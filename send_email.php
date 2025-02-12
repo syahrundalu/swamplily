@@ -2,48 +2,40 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Pastikan untuk memasukkan path yang benar ke PHPMailer
+require 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $firstName = $_POST['first-name'];
-    $lastName = $_POST['last-name'];
-    $email = $_POST['email'];
-    $serviceDate = $_POST['service-date'];
-    $service = $_POST['service'];
-    $message = $_POST['message'];
-
+    $firstName = htmlspecialchars($_POST['first-name']);
+    $lastName = htmlspecialchars($_POST['last-name']);
+    $email = htmlspecialchars($_POST['email']);
+    $serviceDate = htmlspecialchars($_POST['service-date']);
+    $service = htmlspecialchars($_POST['service']);
+    $message = htmlspecialchars($_POST['message']);
+    
     $mail = new PHPMailer(true);
-
     try {
-        // Server settings
         $mail->isSMTP();
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'info@swamplily.io'; // Alamat email pengirim
-        $mail->Password = 'Swamplily14!';     // Password email pengirim
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 465;                    // Port untuk SMTP
-
-        // Penerima
-        $mail->setFrom('info@swamplily.io', 'Swamp Lily');
-        $mail->addAddress('info@swamplily.io', 'Swamp Lily'); // Penerima email
-
-        // Konten email
+        $mail->Username = 'info@swamplily.io';
+        $mail->Password = 'Swamplily14!';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
+        
+        $mail->setFrom($email, "$firstName $lastName");
+        $mail->addAddress('info@swamplily.io');
+        
         $mail->isHTML(true);
-        $mail->Subject = 'New Service Request';
-        $mail->Body = "You have received a new service request from:<br>
-                       <strong>Name:</strong> $firstName $lastName<br>
-                       <strong>Email:</strong> $email<br>
-                       <strong>Service Date:</strong> $serviceDate<br>
-                       <strong>Service:</strong> $service<br>
-                       <strong>Message:</strong> $message";
-
-        if (!$mail->send()) {
-            throw new Exception("Mailer Error: " . $mail->ErrorInfo);
-        }
-        echo json_encode(["message" => "Email sent successfully!"]);
+        $mail->Subject = "New Service Request from $firstName $lastName";
+        $mail->Body = "<p><strong>Name:</strong> $firstName $lastName</p>
+                        <p><strong>Email:</strong> $email</p>
+                        <p><strong>Service Date:</strong> $serviceDate</p>
+                        <p><strong>Service:</strong> $service</p>
+                        <p><strong>Message:</strong><br>$message</p>";
+        
+        $mail->send();
+        echo json_encode(["status" => "success", "message" => "Your request has been sent successfully!"]);
     } catch (Exception $e) {
-        echo json_encode(["message" => "Error: " . $e->getMessage()]);
+        echo json_encode(["status" => "error", "message" => "Email could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
     }
 }
-?>
