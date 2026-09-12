@@ -1,197 +1,47 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <title>Work - Swamplily</title>
-  <!-- Required meta tags -->
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-  </script> 
-  <meta charset="utf-8" />
-  <meta name="description" content="Explore Swamp Lily's portfolio showcasing unique, nature-inspired designs. Discover our creative projects blending art and botany, perfect for enthusiasts of botanical art and storytelling." />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="icon" href="images/logo.PNG" type="image/png">
-
-  <!-- fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
-  <!--cdncss link-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/lightbox.min.css">
-  <!--style sheet-->
-  <link rel="stylesheet" href="css/vendor.css">
-  <!--style sheet-->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/mobile-style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Work — Swamp Lily</title>
+  <link rel="icon" href="images/logo.PNG">
+  <link rel="stylesheet" href="css/guideline.css">
 </head>
-
-<body id="top" class="work">
-
-  <!-- preloader -->
-  <div id="preloader">
-    <div id="loader">
-      <img src="images/buaya_motion.GIF" alt="">
-    </div>
-  </div>
-
-  <div class="container"> 
-    <div class="logo-nav">
-      <a href="index.html"><img src="images/logo.PNG" alt="Logo" class="logo"></a>
-      <ul class="nav">
-        <li><a href="about.html">About</a></li>
-        <li><a href="">Work</a></li>
-        <li><a href="shop.html">Shop</a></li>
-      </ul>
-    </div> 
-
-    <div class="main-content">
-      <ul></ul> <!-- Images and categories will be dynamically inserted here -->
-    </div>
-    
-    
-    <div class="modal" id="imageModal">
-      <div class="modal-content">
-          <img src="" alt="Popup Image" id="modalImage">
-      </div>
-  </div>
-
-    <!-- Decorative Images
-    <img src="images/left-decor.png" alt="Flower Decoration" class="flower-img flower-left">
-    <img src="images/right-decor.png" alt="Flower Decoration" class="flower-img flower-right"> -->
-
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2024 Swamp Lily. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="js/jquery-1.11.0.min.js"></script> <!-- jquery file-->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> <!--cdn link-->
-  <script src="js/plugins.js"></script>
-  <script src="js/plugins2.js"></script>
-  <script type="text/javascript" src="js/lightbox.min.js"></script>
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js"></script>
-    
-<script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    let isModalPinned = false; // Flag to keep modal open on click
-
-    // Function to attach hover events
-    const attachHoverEvents = () => {
-        document.querySelectorAll('.main-content a').forEach(link => {
-            // Show modal on hover
-            link.addEventListener('mouseover', function () {
-                if (!isModalPinned) { // Only show on hover if not pinned
-                    const imagesArray = JSON.parse(this.getAttribute('data-images'));
-                    modalImage.src = imagesArray[0]; // Set the first image
-                    modal.style.display = 'flex'; // Show the modal
-                }
-            });
-
-            // Hide modal when cursor leaves the link (if not pinned)
-            link.addEventListener('mouseout', function () {
-                if (!isModalPinned) { // Only hide on mouseout if not pinned
-                    modal.style.display = 'none'; // Hide the modal
-                }
-            });
-
-            // Pin the modal (keep it open) when clicked
-            link.addEventListener('click', function (e) {
-                const imagesArray = JSON.parse(this.getAttribute('data-images'));
-                modalImage.src = imagesArray[0];
-                modal.style.display = 'flex';
-            });
-        });
-    };
-
-    try {
-        // Fetch JSON data
-        const response = await fetch("images-data.json");
-        const data = await response.json();
-
-        // Select the container where the categories will be rendered
-        const container = document.querySelector(".main-content ul");
-
-        // Loop through categories and render
-        data.categories.forEach(category => {
-            const listItem = document.createElement("li");
-            listItem.innerHTML = `
-                <a 
-                    href="slideshow.html" 
-                    data-name="${category.name}" 
-                    data-images='${JSON.stringify(category.images)}' 
-                    data-descriptions='${JSON.stringify(category.descriptions)}' 
-                    data-credits='${JSON.stringify(category.credits)}'>
-                    ${category.name}
-                </a>
-            `;
-            container.appendChild(listItem);
-        });
-
-        // Attach hover events to dynamically added links
-        attachHoverEvents();
-
-        // Attach click events to dynamically added links
-        document.querySelectorAll('.main-content ul li a').forEach(link => {
-            link.addEventListener('click', (event) => {
-                // Retrieve data attributes
-                const name = link.dataset.name;
-                const images = JSON.parse(link.dataset.images);
-                const descriptions = JSON.parse(link.dataset.descriptions);
-                const credits = JSON.parse(link.dataset.credits);
-
-                // Store them in localStorage
-                localStorage.setItem('slideshowTitle', name);
-                localStorage.setItem('slideshowImages', JSON.stringify(images));
-                localStorage.setItem('slideshowDescriptions', JSON.stringify(descriptions));
-                localStorage.setItem('slideshowCredits', JSON.stringify(credits));
-            });
-        });
-    } catch (error) {
-        console.error("Error loading JSON data:", error);
-    }
-
-    // Close modal on outside click and reset the pin state
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            isModalPinned = false; // Reset the pin state when modal is closed
-        }
-    };
-
-    // Close modal with Escape key and reset the pin state
-    window.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-            modal.style.display = 'none';
-            isModalPinned = false; // Reset the pin state when modal is closed
-        }
-    });
-});
-
-
-</script>
-
+<body class="guideline work-page">
+  <nav class="site-nav work-nav">
+    <a href="index.html"><img src="images/logo.PNG" alt="Swamp Lily"></a>
+    <ul><li><a href="home.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="shop.html">Shop</a></li></ul>
+  </nav>
+  <main class="work-grid" id="workGrid" aria-label="Selected work"></main>
+  <script>
+    fetch('images-data.json').then(response=>response.json()).then(data=>{
+      const grid=document.querySelector('#workGrid');
+      const covers=[
+        'images/Update/WORK/1/IRRF1124.JPG',
+        'images/Update/WORK/2/0000006.jpg',
+        'images/Update/WORK/3/1.jpg',
+        'images/Update/WORK/4/2.jpg',
+        'images/Update/WORK/5/FOLD-BC.jpg',
+        'images/Update/WORK/6/7.jpg',
+        'images/Update/WORK/7/AfterlightImage (1).JPG'
+      ];
+      const columns=[document.createElement('div'),document.createElement('div')];
+      columns.forEach(column=>{column.className='work-column';grid.append(column)});
+      data.categories.forEach((category,index)=>{
+        const link=document.createElement('a');
+        link.className='work-card work-card-'+(index+1);
+        link.href='project.html?project='+index;
+        link.setAttribute('aria-label','View '+category.name);
+        const image=document.createElement('img');
+        image.src=covers[index];
+        image.alt=category.name;
+        image.loading='eager';
+        image.fetchPriority=index<2?'high':'auto';
+        image.decoding='async';
+        link.append(image);
+        columns[index%2].append(link);
+      });
+    }).catch(console.error);
+  </script>
 </body>
-
-
-
 </html>

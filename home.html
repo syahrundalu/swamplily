@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home — Swamp Lily</title>
+  <meta name="description" content="Swamp Lily is a botanical design studio based in Bali.">
+  <link rel="icon" href="images/logo.PNG">
+  <link rel="stylesheet" href="css/guideline.css">
+</head>
+<body class="guideline home-page">
+  <main>
+    <section class="home-split">
+      <div class="home-slideshow">
+        <img src="images/optimized/home/1.webp" alt="Botanical arrangement" fetchpriority="high">
+      </div>
+      <div class="home-panel">
+        <nav class="home-nav">
+          <a href="index.html"><img src="images/logo.PNG" alt="Swamp Lily"></a>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </nav>
+        <div class="home-copy">
+          <h1>A Stage for Everything in Between</h1>
+          <p>Swamp Lily is a botanical design studio based in Bali. Initially grown from a love of the botanical world and storytelling, we explore the raw, delicate, sentimental language of flowers and plants and how they intertwine with our stories of life—to create everything in between.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-categories">
+      <a class="category-card" href="shop.html#arrangements"><img src="images/Update/HOME/COVER/ARRANGEMENTS.jpg" alt="Arrangements"><span>ARRANGEMENTS</span></a>
+      <a class="category-card" href="weddings.html"><img src="images/Update/HOME/COVER/IRRF1124.JPG" alt="Weddings"><span>WEDDINGS</span></a>
+      <a class="category-card" href="styling.html"><img src="images/Update/HOME/COVER/STYLING &amp; CURATIONS.jpg" alt="Styling and curation"><span>STYLING &amp; CURATION</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer home-footer"><span>Swamp Lily</span><div><a href="https://instagram.com/">IG</a><a href="mailto:hello@swamplily.com">EMAIL</a><a href="https://wa.me/">WA</a></div></footer>
+  <script>
+    const files=['1.webp','2.webp','3.webp','4.webp','5.webp'];
+    let current=0;
+    const hero=document.querySelector('.home-slideshow img');
+    setInterval(()=>{current=(current+1)%files.length;hero.classList.add('is-changing');setTimeout(()=>{hero.src='images/optimized/home/'+files[current];hero.classList.remove('is-changing')},300)},5000);
+  </script>
+</body>
+</html>

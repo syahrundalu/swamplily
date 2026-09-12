@@ -141,42 +141,42 @@
         width: 70%;
     }
 
-    /* Main Content - Work */
-
-    .main-content li {
-        position: absolute;
-        left: 0; /* Start from the left */
-        transform: translateX(calc(var(--i) * 0px)) translateY(calc(var(--i) * 30px));
-        /* Adjust 20px and 30px to change diagonal spacing */
-        left: -80px;
+    /* Work: navigation above, folder rows below */
+    .work-layout {
+        display: block;
     }
 
-    .main-content li:nth-child(1) {
-    --i: 1;
-    }
-
-    .main-content li:nth-child(2) {
-        --i: 2;
-    }
-
-    .main-content li:nth-child(3) {
-        --i: 3;
-    }
-
-    .main-content li:nth-child(4) {
-        --i: 4;
-    }
-
-    .main-content li:nth-child(5) {
-        --i: 5;
-    }
-
-    .main-content li:nth-child(6) {
-        --i: 6;
-    }
-
-    .work .footer {
+    .work-sidebar {
+        position: relative;
         width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .work-sidebar .logo-nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .work-sidebar .nav {
+        flex-direction: row;
+        gap: 0;
+        margin: 0;
+    }
+
+    .work-sidebar .footer {
+        display: none;
+    }
+
+    .work-gallery {
+        width: 100%;
+        padding: 0 0 20px 20px;
+    }
+
+    .work-row img {
+        height: 42vw;
+        min-height: 150px;
     }
 
     /* Shop */
