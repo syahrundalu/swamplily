@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
 
 /* fonts family */
 
 :root {
     --body-font : "Nunito", sans-serif;
     --bs-btn-font-family : "Nunito", sans-serif;
+    --font-body: clamp(18px, 1.25vw, 20px);
+    --font-small: clamp(14px, .95vw, 16px);
+    --font-nav: clamp(17px, 1.1vw, 19px);
+    --font-title: clamp(28px, 3vw, 46px);
+    --font-display: clamp(24px, 2vw, 32px);
 }
 
 /* fonts color */
@@ -108,6 +113,7 @@ body , body  [data-bs-theme=light] {
 
 body {
     font-family: var(--body-font);
+    font-size: var(--font-body);
     scroll-behavior: smooth;
     overflow-x: hidden;
     background-color: #EBE7CA;
@@ -177,6 +183,12 @@ h2,h3,h4,h5,h6 {
     display: flex;
     margin-top: -100px;
     }
+
+@media (min-width: 769px) {
+    .banner .logodancing {
+        cursor: pointer;
+    }
+}
 
 /* line height */
 
@@ -372,7 +384,7 @@ a:hover {
   
   .link-landing ul li {
     margin-right: 20px; /* Add space between items */
-    font-size: 24px;
+    font-size: var(--font-display);
   }
 
   .link-landing ul li a {
@@ -491,7 +503,7 @@ a:hover {
     text-decoration: none;
     color: #40503D;
     font-weight: 500;
-    font-size: 14px;
+    font-size: var(--font-nav);
 }
 
 .nav li a:hover {
@@ -499,13 +511,13 @@ a:hover {
 }
 
  .about .content h1 {
-    font-size: 48px;
+    font-size: var(--font-title);
     margin-bottom: 20px;
     color: #333;
 }
 
  .about .content p {
-    font-size: 14px;
+    font-size: var(--font-body);
     line-height: 1.6;
     color: #333;
 }
@@ -513,7 +525,7 @@ a:hover {
  footer {
     text-align: right;
     margin-top: 200px;
-    font-size: 12px;
+    font-size: var(--font-small);
     color: #999;
 }
 
@@ -536,7 +548,7 @@ a:hover {
 .main-title {
     text-align: center;
     margin-top: 50px;
-    font-size: 2.5rem;
+    font-size: var(--font-title);
 }
 
 .arrangement-text {
@@ -611,7 +623,7 @@ a:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .main-title {
-        font-size: 2rem;
+        font-size: var(--font-title);
     }
     .contact-section {
         padding: 0px 0px;
@@ -627,7 +639,7 @@ a:hover {
 
 .shop header p {
     padding: 0px 100px;
-    font-size: 14px;
+    font-size: var(--font-body);
     line-height: 1.6;
 }
 
@@ -640,7 +652,7 @@ a:hover {
 }
 
 .shop .product-section p, .shop .floral-section p, .shop .style-section p, .shop .terms-section p {
-    font-size: 14px;
+    font-size: var(--font-body);
     line-height: 1.6;
 }
 

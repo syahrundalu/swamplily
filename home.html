@@ -6,26 +6,27 @@
   <title>Home — Swamp Lily</title>
   <meta name="description" content="Swamp Lily is a botanical design studio based in Bali.">
   <link rel="icon" href="images/logo.PNG">
-  <link rel="stylesheet" href="css/guideline.css">
+  <link rel="stylesheet" href="css/guideline.css?v=20260920-5">
 </head>
 <body class="guideline home-page">
   <main>
     <section class="home-split">
-      <div class="home-slideshow">
-        <img src="images/optimized/home/1.webp" alt="Botanical arrangement" fetchpriority="high">
-      </div>
-      <div class="home-panel">
-        <nav class="home-nav">
-          <a href="index.html"><img src="images/logo.PNG" alt="Swamp Lily"></a>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="shop.html">Shop</a></li>
-          </ul>
-        </nav>
-        <div class="home-copy">
-          <h1>A Stage for Everything in Between</h1>
-          <p>Swamp Lily is a botanical design studio based in Bali. Initially grown from a love of the botanical world and storytelling, we explore the raw, delicate, sentimental language of flowers and plants and how they intertwine with our stories of life—to create everything in between.</p>
+      <div class="home-hero-inner">
+        <div class="home-slideshow">
+          <img src="images/optimized/home/1.webp" alt="Botanical arrangement" fetchpriority="high">
+        </div>
+        <div class="home-panel">
+          <nav class="home-nav" aria-label="Main navigation">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="shop.html">Shop</a></li>
+            </ul>
+          </nav>
+          <div class="home-copy">
+            <h1><img src="images/header/stage_for_everything_in_between.png" alt="A Stage for Everything in Between"></h1>
+            <p>Swamp Lily is a floral design studio based in Bali. We create to tell stories through the fascinating lens of the botanical world, exploring the idea of alternative beauty—to create everything in between.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -37,7 +38,14 @@
     </section>
   </main>
 
-  <footer class="site-footer home-footer"><span>Swamp Lily</span><div><a href="https://instagram.com/">IG</a><a href="mailto:hello@swamplily.com">EMAIL</a><a href="https://wa.me/">WA</a></div></footer>
+  <footer class="site-footer home-footer">
+    <a class="footer-logo" href="index.html" aria-label="Swamp Lily landing page"><img src="images/logodancing.gif" alt="Swamp Lily"></a>
+    <div class="footer-socials">
+      <a href="https://instagram.com/" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="icon-fill"/></svg></a>
+      <a href="mailto:hello@swamplily.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg></a>
+      <a href="https://wa.me/" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.6.7c-.2.2-.2.4-.1.6.6 1.1 1.5 2 2.6 2.6.2.1.4.1.6-.1l.8-1c.2-.2.4-.3.7-.2l1.8.8c.3.2.5.3.5.5 0 .2-.1 1.1-.7 1.7-.5.6-1.3.9-2 .9-.5 0-1.1-.1-1.8-.4-1.1-.4-2.5-1.2-3.8-2.5-1.1-1.1-1.9-2.4-2.3-3.5-.4-1.1 0-1.8.3-2.2Z"/></svg></a>
+    </div>
+  </footer>
   <script>
     const files=['1.webp','2.webp','3.webp','4.webp','5.webp'];
     let current=0;

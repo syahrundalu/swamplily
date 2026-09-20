@@ -1,4 +1,11 @@
 @media (max-width: 768px) { /* Apply only on mobile screens */
+    :root {
+        --font-body: 17px;
+        --font-small: 14px;
+        --font-nav: 17px;
+        --font-title: 30px;
+        --font-display: 24px;
+    }
     html, body {
         margin: 0;
         padding: 0;
@@ -41,7 +48,7 @@
     .link-landing a {
         text-decoration: none;
         color: black; /* Adjust color */
-        font-size: 16px;
+        font-size: var(--font-nav);
     }
     .link-landing {
         position: fixed; /* Keep it at the bottom */
@@ -115,7 +122,7 @@
     .nav li a {
         text-decoration: none;
         color: #40503D; /* Adjust color */
-        font-size: 14px;
+        font-size: var(--font-nav);
         font-weight: 500;
         padding: 8px 12px; /* Add some padding for spacing */
     }

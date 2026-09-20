@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Work — Swamp Lily</title>
   <link rel="icon" href="images/logo.PNG">
-  <link rel="stylesheet" href="css/guideline.css">
+  <link rel="stylesheet" href="css/guideline.css?v=20260920-8">
 </head>
 <body class="guideline work-page">
   <nav class="site-nav work-nav">
@@ -13,34 +13,47 @@
     <ul><li><a href="home.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="shop.html">Shop</a></li></ul>
   </nav>
   <main class="work-grid" id="workGrid" aria-label="Selected work"></main>
+  <footer class="site-footer home-footer"><a class="footer-logo" href="index.html" aria-label="Swamp Lily landing page"><img src="images/logodancing.gif" alt="Swamp Lily"></a><div class="footer-socials"><a href="https://instagram.com/" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="icon-fill"/></svg></a><a href="mailto:hello@swamplily.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg></a><a href="https://wa.me/" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.6.7c-.2.2-.2.4-.1.6.6 1.1 1.5 2 2.6 2.6.2.1.4.1.6-.1l.8-1c.2-.2.4-.3.7-.2l1.8.8c.3.2.5.3.5.5 0 .2-.1 1.1-.7 1.7-.5.6-1.3.9-2 .9-.5 0-1.1-.1-1.8-.4-1.1-.4-2.5-1.2-3.8-2.5-1.1-1.1-1.9-2.4-2.3-3.5-.4-1.1 0-1.8.3-2.2Z"/></svg></a></div></footer>
   <script>
-    fetch('images-data.json').then(response=>response.json()).then(data=>{
+    fetch('images-data.json?v=20260920-9', { cache: 'no-store' }).then(response=>response.json()).then(data=>{
       const grid=document.querySelector('#workGrid');
       const covers=[
-        'images/Update/WORK/1/IRRF1124.JPG',
-        'images/Update/WORK/2/0000006.jpg',
-        'images/Update/WORK/3/1.jpg',
-        'images/Update/WORK/4/2.jpg',
-        'images/Update/WORK/5/FOLD-BC.jpg',
-        'images/Update/WORK/6/7.jpg',
-        'images/Update/WORK/7/AfterlightImage (1).JPG'
+        'images/Update/WORK/1/MAIN IMAGE.jpg',
+        'images/Update/WORK/2/MAIN IMAGE.jpg',
+        'images/Update/WORK/3/MAIN IMAGE.jpg',
+        'images/Update/WORK/4/MAIN IMAGE.jpg',
+        'images/Update/WORK/5/MAIN IMAGE.jpg',
+        'images/Update/WORK/6/MAIN IMAGE.jpg',
+        'images/Update/WORK/7/MAIN IMAGE.jpg'
       ];
-      const columns=[document.createElement('div'),document.createElement('div')];
-      columns.forEach(column=>{column.className='work-column';grid.append(column)});
-      data.categories.forEach((category,index)=>{
+      const cards=covers.map((cover,index)=>{
+        const category=data.categories[index] || { name: `Project ${index+1}` };
         const link=document.createElement('a');
         link.className='work-card work-card-'+(index+1);
         link.href='project.html?project='+index;
         link.setAttribute('aria-label','View '+category.name);
         const image=document.createElement('img');
-        image.src=covers[index];
+        image.src=cover;
         image.alt=category.name;
         image.loading='eager';
         image.fetchPriority=index<2?'high':'auto';
         image.decoding='async';
         link.append(image);
-        columns[index%2].append(link);
+        return link;
       });
+      const top=document.createElement('section');
+      top.className='work-pair work-top';
+      const topLeft=document.createElement('div');
+      const topRight=document.createElement('div');
+      topLeft.className='work-stack';
+      topRight.className='work-stack';
+      topLeft.append(cards[0],cards[2]);
+      topRight.append(cards[1],cards[3]);
+      top.append(topLeft,topRight);
+      const bottom=document.createElement('section');
+      bottom.className='work-pair work-bottom';
+      bottom.append(cards[5],cards[6]);
+      grid.append(top,cards[4],bottom);
     }).catch(console.error);
   </script>
 </body>
