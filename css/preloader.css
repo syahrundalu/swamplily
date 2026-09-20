@@ -24,3 +24,31 @@
 @media (prefers-reduced-motion: reduce) {
   .page-preloader { transition-duration: .01ms; }
 }
+
+/* Image placeholders */
+img.image-skeleton {
+  background-color: #deddd3;
+  background-image: linear-gradient(100deg, #deddd3 20%, #efeee7 38%, #deddd3 56%);
+  background-repeat: no-repeat;
+  background-size: 220% 100%;
+  animation: image-skeleton-shimmer 1.65s ease-in-out infinite;
+}
+
+img.image-skeleton.is-loaded {
+  background: transparent;
+  animation: none;
+}
+
+img.image-skeleton.is-error {
+  background: #deddd3;
+  animation: none;
+}
+
+@keyframes image-skeleton-shimmer {
+  from { background-position: 130% 0; }
+  to { background-position: -130% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img.image-skeleton { animation: none; }
+}
