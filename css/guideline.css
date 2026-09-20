@@ -334,18 +334,18 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 .weddings-content { min-height: calc(100vh - 82px); padding: clamp(46px, 7vw, 105px) var(--nav-pad) clamp(70px, 8vw, 120px); text-align: center; }
 .weddings-content h1 { display: flex; width: auto; height: clamp(70px, 10vw, 135px); margin: 0 auto; align-items: center; justify-content: center; line-height: 0; }
 .weddings-content h1 img { display: block; width: auto; max-width: 88vw; height: 100%; object-fit: contain; }
-.weddings-content p { max-width: 920px; margin: clamp(42px, 3.6vw, 52px) auto clamp(86px, calc(3vw + 50px), 94px); line-height: 1.22; }
+.weddings-content p { max-width: 920px; margin: 28px auto 0; line-height: 1.22; }
 .weddings-link { display: inline-block; border-bottom: 2px solid currentColor; color: inherit; font-style: italic; font-weight: 900; line-height: .95; text-decoration: none; }
-.weddings-image { display: block; width: min(24.4vw, 340px); margin: 0 auto; }
+.weddings-image { display: block; width: min(24.4vw, 340px); margin: clamp(34px, 5vw, 72px) auto 0; }
 .weddings-image img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
 
 /* Styling and curation */
 .styling-content { min-height: calc(100vh - 82px); padding: clamp(46px, 7vw, 105px) var(--nav-pad) clamp(70px, 7vw, 105px); text-align: center; }
 .styling-content h1 { display: flex; width: auto; height: clamp(70px, 10vw, 135px); margin: 0 auto; padding-top: 0; align-items: center; justify-content: center; line-height: 0; }
 .styling-content h1 img { display: block; width: auto; max-width: 88vw; height: 100%; object-fit: contain; }
-.styling-content header p { max-width: 980px; margin: clamp(40px, 3.7vw, 56px) auto 0; line-height: 1.22; }
+.styling-content header p { max-width: 980px; margin: 28px auto 0; line-height: 1.22; }
 .styling-link { display: inline-block; border-bottom: 2px solid currentColor; color: inherit; font-style: italic; font-weight: 900; line-height: .95; text-decoration: none; }
-.styling-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: calc(100% - 28px); gap: clamp(8px, .75vw, 12px); margin: clamp(110px, calc(5.4vw + 50px), 132px) auto 0; }
+.styling-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: calc(100% - 28px); gap: clamp(8px, .75vw, 12px); margin: clamp(34px, 5vw, 72px) auto 0; }
 .styling-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 
 @media (max-width: 760px) {
@@ -367,13 +367,13 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
   .desktop-break { display: none; }
   .weddings-content { min-height: 0; padding: 46px 20px 65px; }
   .weddings-content h1 { padding-top: 0; }
-  .weddings-content p { margin: 45px auto 88px; }
-  .weddings-image { width: min(78vw, 390px); }
+  .weddings-content p { margin: 28px auto 0; }
+  .weddings-image { width: min(78vw, 390px); margin-top: 34px; }
   .styling-content { min-height: 0; padding: 46px 20px 65px; }
   .styling-content h1 { width: auto; height: 70px; }
   .styling-content h1 img { height: 100%; }
-  .styling-content header p { margin-top: 40px; }
-  .styling-gallery { width: 100%; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 100px; }
+  .styling-content header p { margin-top: 28px; }
+  .styling-gallery { width: 100%; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 34px; }
   .work-grid { width: calc(100% - (2 * var(--nav-pad))); }
   .work-pair, .work-stack { gap: 5px; }
   .work-card-5 { margin-block: 5px; }
