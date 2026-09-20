@@ -148,7 +148,7 @@ a { color: inherit; }
   font-size: var(--font-small);
 }
 .site-footer a { margin-left: 24px; color: inherit; text-decoration: none; }
-.home-footer { min-height: clamp(76px, 11vw, 132px); padding-inline: var(--nav-pad); background: var(--olive) url('../images/footer_bg.jpg') center / cover no-repeat; }
+.home-footer { min-height: clamp(76px, 11vw, 132px); padding-inline: var(--nav-pad); background: var(--olive) url('../images/optimized/footer_bg.webp') center / cover no-repeat; }
 .home-footer .footer-logo { display: block; width: clamp(88px, 12vw, 170px); height: clamp(44px, 6vw, 76px); margin: 0; overflow: hidden; }
 .home-footer .footer-logo img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; }
 .footer-socials { display: flex; align-items: center; gap: clamp(14px, 2vw, 27px); }
@@ -284,7 +284,7 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 .order-label { font-weight: 900; text-transform: uppercase; }
 .catalogue-link { display: inline-block; border-bottom: 2px solid currentColor; color: inherit; font-style: italic; font-weight: 900; line-height: .95; text-decoration: none; }
 .order-panel .button { margin-bottom: 0; }
-.order-notice { width: 100%; min-height: clamp(120px, 12vw, 165px); display: flex; align-items: center; justify-content: center; padding: clamp(30px, 4vw, 54px) var(--nav-pad); background: var(--olive) url("../images/footer_bg.jpg") center / cover no-repeat; color: var(--paper); }
+.order-notice { width: 100%; min-height: clamp(120px, 12vw, 165px); display: flex; align-items: center; justify-content: center; padding: clamp(30px, 4vw, 54px) var(--nav-pad); background: var(--olive) url("../images/optimized/footer_bg.webp") center / cover no-repeat; color: var(--paper); }
 .order-notice p { width: 100%; max-width: 980px; margin: 0; font-size: var(--font-body); font-weight: 600; line-height: 1.3; }
 .button { display: inline-block; border: 0; border-radius: 0; padding: 11px 27px; background: var(--olive); color: #fff; font: inherit; font-size: var(--font-body); text-decoration: none; }
 .section { padding: clamp(55px, 8vw, 120px) var(--nav-pad); }

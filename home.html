@@ -7,8 +7,10 @@
   <meta name="description" content="Swamp Lily is a botanical design studio based in Bali.">
   <link rel="icon" href="images/logo.PNG">
   <link rel="stylesheet" href="css/guideline.css?v=20260920-5">
+  <link rel="stylesheet" href="css/preloader.css">
 </head>
 <body class="guideline home-page">
+  <div class="page-preloader"><img src="images/buaya_motion.GIF" alt="" aria-hidden="true"></div>
   <main>
     <section class="home-split">
       <div class="home-hero-inner">
@@ -32,9 +34,9 @@
     </section>
 
     <section class="home-categories">
-      <a class="category-card" href="shop.html#arrangements"><img src="images/Update/HOME/COVER/ARRANGEMENTS.jpg" alt="Arrangements"><span>ARRANGEMENTS</span></a>
-      <a class="category-card" href="weddings.html"><img src="images/Update/HOME/COVER/IRRF1124.JPG" alt="Weddings"><span>WEDDINGS</span></a>
-      <a class="category-card" href="styling.html"><img src="images/Update/HOME/COVER/STYLING &amp; CURATIONS.jpg" alt="Styling and curation"><span>STYLING &amp; CURATION</span></a>
+      <a class="category-card" href="shop.html#arrangements"><img src="images/optimized/Update/HOME/COVER/ARRANGEMENTS.webp" alt="Arrangements" loading="lazy" decoding="async"><span>ARRANGEMENTS</span></a>
+      <a class="category-card" href="weddings.html"><img src="images/optimized/Update/HOME/COVER/IRRF1124.webp" alt="Weddings" loading="lazy" decoding="async"><span>WEDDINGS</span></a>
+      <a class="category-card" href="styling.html"><img src="images/optimized/Update/HOME/COVER/STYLING &amp; CURATIONS.webp" alt="Styling and curation" loading="lazy" decoding="async"><span>STYLING &amp; CURATION</span></a>
     </section>
   </main>
 
@@ -52,5 +54,6 @@
     const hero=document.querySelector('.home-slideshow img');
     setInterval(()=>{current=(current+1)%files.length;hero.classList.add('is-changing');setTimeout(()=>{hero.src='images/optimized/home/'+files[current];hero.classList.remove('is-changing')},300)},5000);
   </script>
+  <script src="js/preloader.js"></script>
 </body>
 </html>

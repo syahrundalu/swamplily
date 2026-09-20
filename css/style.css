@@ -155,7 +155,7 @@ h2,h3,h4,h5,h6 {
 .banner {
     position: relative;
     color: var(--bs-black);
-    background-image: url(../images/bgbanner.JPG); 
+    background-image: url(../images/optimized/bgbanner.webp);
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: top center;

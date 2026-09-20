@@ -3,17 +3,17 @@ const categoriesData =  [
       {
         "name": "Set Design",
         "images": [
-          "images/setdesign/1.jpg",
-          "images/setdesign/2.jpg",
-          "images/setdesign/3.jpg",
-          "images/setdesign/4.jpg",
-          "images/setdesign/5.jpg",
-          "images/setdesign/6.jpg",
-          "images/setdesign/7.jpg",
-          "images/setdesign/8.jpg",
-          "images/setdesign/9.jpg",
-          "images/setdesign/10.jpg",
-          "images/setdesign/11.jpg"
+          "images/optimized/setdesign/1.webp",
+          "images/optimized/setdesign/2.webp",
+          "images/optimized/setdesign/3.webp",
+          "images/optimized/setdesign/4.webp",
+          "images/optimized/setdesign/5.webp",
+          "images/optimized/setdesign/6.webp",
+          "images/optimized/setdesign/7.webp",
+          "images/optimized/setdesign/8.webp",
+          "images/optimized/setdesign/9.webp",
+          "images/optimized/setdesign/10.webp",
+          "images/optimized/setdesign/11.webp"
         ],
         "descriptions": [
           "Elegant stage setup for events.",
@@ -45,11 +45,11 @@ const categoriesData =  [
       {
         "name": "Photography Series",
         "images": [
-          "images/photographseries/1.jpg",
-          "images/photographseries/2.jpg",
-          "images/photographseries/3.jpg",
-          "images/photographseries/4.jpg",
-          "images/photographseries/5.jpg"
+          "images/optimized/photographseries/1.webp",
+          "images/optimized/photographseries/2.webp",
+          "images/optimized/photographseries/3.webp",
+          "images/optimized/photographseries/4.webp",
+          "images/optimized/photographseries/5.webp"
         ],
         "descriptions": [
           "Beautiful landscape with sunset.",
@@ -69,14 +69,14 @@ const categoriesData =  [
       {
         "name": "Floral Accessories",
         "images": [
-          "images/floral/1.jpg",
-          "images/floral/2.jpg",
-          "images/floral/3.jpg",
-          "images/floral/4.jpg",
-          "images/floral/5.jpg",
-          "images/floral/6.jpg",
-          "images/floral/7.jpg",
-          "images/floral/8.jpg"
+          "images/optimized/floral/1.webp",
+          "images/optimized/floral/2.webp",
+          "images/optimized/floral/3.webp",
+          "images/optimized/floral/4.webp",
+          "images/optimized/floral/5.webp",
+          "images/optimized/floral/6.webp",
+          "images/optimized/floral/7.webp",
+          "images/optimized/floral/8.webp"
         ],
         "descriptions": [
           "Elegant floral arrangement for weddings.",
@@ -102,17 +102,17 @@ const categoriesData =  [
       {
         "name": "Interior Styling",
         "images": [
-          "images/interiorstyling/1.jpg",
-          "images/interiorstyling/2.jpg",
-          "images/interiorstyling/3.jpg",
-          "images/interiorstyling/4.jpg",
-          "images/interiorstyling/5.jpg",
-          "images/interiorstyling/6.jpeg",
-          "images/interiorstyling/7.jpeg",
-          "images/interiorstyling/8.jpeg",
-          "images/interiorstyling/9.jpg",
-          "images/interiorstyling/10.jpg",
-          "images/interiorstyling/11.jpeg"  
+          "images/optimized/interiorstyling/1.webp",
+          "images/optimized/interiorstyling/2.webp",
+          "images/optimized/interiorstyling/3.webp",
+          "images/optimized/interiorstyling/4.webp",
+          "images/optimized/interiorstyling/5.webp",
+          "images/optimized/interiorstyling/6.webp",
+          "images/optimized/interiorstyling/7.webp",
+          "images/optimized/interiorstyling/8.webp",
+          "images/optimized/interiorstyling/9.webp",
+          "images/optimized/interiorstyling/10.webp",
+          "images/optimized/interiorstyling/11.webp"  
         ],
         "descriptions": [
           "Cozy living room setup with neutral tones."
@@ -126,28 +126,28 @@ const categoriesData =  [
       {
         "name": "Arrangements",
         "images": [
-          "images/arrangement/1.jpg",
-          "images/arrangement/2.jpg",
-          "images/arrangement/3.jpg",
-          "images/arrangement/4.jpg",
-          "images/arrangement/5.jpg",
-          "images/arrangement/6.jpg",
-          "images/arrangement/7.jpg",
-          "images/arrangement/8.jpg",
-          "images/arrangement/9.jpg",
-          "images/arrangement/10.jpg",
-          "images/arrangement/11.jpg",
-          "images/arrangement/12.jpg",
-          "images/arrangement/13.jpg",
-          "images/arrangement/14.jpg",
-          "images/arrangement/15.jpg",
-          "images/arrangement/16.jpg",
-          "images/arrangement/17.jpg",
-          "images/arrangement/18.jpg",
-          "images/arrangement/19.jpg",
-          "images/arrangement/20.jpg",
-          "images/arrangement/21.jpg",
-          "images/arrangement/22.jpg"
+          "images/optimized/arrangement/1.webp",
+          "images/optimized/arrangement/2.webp",
+          "images/optimized/arrangement/3.webp",
+          "images/optimized/arrangement/4.webp",
+          "images/optimized/arrangement/5.webp",
+          "images/optimized/arrangement/6.webp",
+          "images/optimized/arrangement/7.webp",
+          "images/optimized/arrangement/8.webp",
+          "images/optimized/arrangement/9.webp",
+          "images/optimized/arrangement/10.webp",
+          "images/optimized/arrangement/11.webp",
+          "images/optimized/arrangement/12.webp",
+          "images/optimized/arrangement/13.webp",
+          "images/optimized/arrangement/14.webp",
+          "images/optimized/arrangement/15.webp",
+          "images/optimized/arrangement/16.webp",
+          "images/optimized/arrangement/17.webp",
+          "images/optimized/arrangement/18.webp",
+          "images/optimized/arrangement/19.webp",
+          "images/optimized/arrangement/20.webp",
+          "images/optimized/arrangement/21.webp",
+          "images/optimized/arrangement/22.webp"
         ],
         "descriptions": [
           "Elegant arrangement for corporate events."

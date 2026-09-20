@@ -6,8 +6,10 @@
   <title>Work — Swamp Lily</title>
   <link rel="icon" href="images/logo.PNG">
   <link rel="stylesheet" href="css/guideline.css?v=20260920-8">
+  <link rel="stylesheet" href="css/preloader.css">
 </head>
 <body class="guideline work-page">
+  <div class="page-preloader"><img src="images/buaya_motion.GIF" alt="" aria-hidden="true"></div>
   <nav class="site-nav work-nav">
     <a href="index.html"><img src="images/logo.PNG" alt="Swamp Lily"></a>
     <ul><li><a href="home.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="shop.html">Shop</a></li></ul>
@@ -18,13 +20,13 @@
     fetch('images-data.json?v=20260920-9', { cache: 'no-store' }).then(response=>response.json()).then(data=>{
       const grid=document.querySelector('#workGrid');
       const covers=[
-        'images/Update/WORK/1/MAIN IMAGE.jpg',
-        'images/Update/WORK/2/MAIN IMAGE.jpg',
-        'images/Update/WORK/3/MAIN IMAGE.jpg',
-        'images/Update/WORK/4/MAIN IMAGE.jpg',
-        'images/Update/WORK/5/MAIN IMAGE.jpg',
-        'images/Update/WORK/6/MAIN IMAGE.jpg',
-        'images/Update/WORK/7/MAIN IMAGE.jpg'
+        'images/optimized/Update/WORK/1/MAIN IMAGE.webp',
+        'images/optimized/Update/WORK/2/MAIN IMAGE.webp',
+        'images/optimized/Update/WORK/3/MAIN IMAGE.webp',
+        'images/optimized/Update/WORK/4/MAIN IMAGE.webp',
+        'images/optimized/Update/WORK/5/MAIN IMAGE.webp',
+        'images/optimized/Update/WORK/6/MAIN IMAGE.webp',
+        'images/optimized/Update/WORK/7/MAIN IMAGE.webp'
       ];
       const cards=covers.map((cover,index)=>{
         const category=data.categories[index] || { name: `Project ${index+1}` };
@@ -35,7 +37,7 @@
         const image=document.createElement('img');
         image.src=cover;
         image.alt=category.name;
-        image.loading='eager';
+        image.loading=index<2?'eager':'lazy';
         image.fetchPriority=index<2?'high':'auto';
         image.decoding='async';
         link.append(image);
@@ -56,5 +58,6 @@
       grid.append(top,cards[4],bottom);
     }).catch(console.error);
   </script>
+  <script src="js/preloader.js"></script>
 </body>
 </html>
