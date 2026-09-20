@@ -131,7 +131,7 @@ a { color: inherit; }
   width: min(calc(100% - (2 * var(--nav-pad))), 1380px);
   gap: clamp(18px, 4vw, 60px);
   margin: 0 auto;
-  padding: clamp(36px, 5.5vw, 78px) 0 clamp(18px, 2.8vw, 40px);
+  padding: 150px 0 0;
 }
 .category-card { display: block; color: var(--green); text-align: center; text-decoration: none; }
 .category-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
@@ -148,12 +148,12 @@ a { color: inherit; }
   font-size: var(--font-small);
 }
 .site-footer a { margin-left: 24px; color: inherit; text-decoration: none; }
-.home-footer { min-height: clamp(76px, 11vw, 132px); padding-inline: var(--nav-pad); background: var(--olive) url('../images/optimized/footer_bg.webp') center / cover no-repeat; }
-.home-footer .footer-logo { display: block; width: clamp(88px, 12vw, 170px); height: clamp(44px, 6vw, 76px); margin: 0; overflow: hidden; }
+.home-footer { min-height: clamp(86px, 7vw, 108px); margin-top: 150px; padding: 10px var(--nav-pad); background: var(--olive) url('../images/optimized/footer_bg.webp') center / cover no-repeat; }
+.home-footer .footer-logo { display: block; width: clamp(128px, 14vw, 220px); height: clamp(52px, 5.5vw, 82px); margin: 0; overflow: hidden; }
 .home-footer .footer-logo img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; }
-.footer-socials { display: flex; align-items: center; gap: clamp(14px, 2vw, 27px); }
-.home-footer .footer-socials a { display: grid; width: 22px; height: 22px; margin: 0; place-items: center; }
-.footer-socials svg { display: block; width: 18px; height: 18px; overflow: visible; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+.footer-socials { display: flex; align-items: center; gap: clamp(16px, 1.8vw, 26px); }
+.home-footer .footer-socials a { display: grid; width: 30px; height: 30px; margin: 0; place-items: center; }
+.footer-socials svg { display: block; width: 24px; height: 24px; overflow: visible; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
 .footer-socials .icon-fill { fill: currentColor; stroke: none; }
 body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 
@@ -162,7 +162,7 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 .work-nav { padding-bottom: 12px; }
 .work-grid {
   width: calc(100% - (2 * var(--nav-pad)));
-  margin: 8px auto clamp(50px, 7vw, 110px);
+  margin: 58px auto clamp(50px, 7vw, 110px);
   display: block;
 }
 .work-pair { display: grid; gap: var(--gap); }
@@ -194,8 +194,8 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 }
 .project-text { position: sticky; top: 22px; padding-top: clamp(28px, 5vw, 76px); }
 .project-text h1 { margin: 0 0 32px; font-size: var(--font-subtitle); font-style: italic; font-weight: 400; line-height: 1.15; }
-.project-text p { max-width: 360px; margin: 0 0 24px; line-height: 1.45; }
-.project-text small { display: block; max-width: 360px; font-size: var(--font-small); white-space: pre-line; }
+.project-text p { max-width: 360px; margin: 0 0 75px; line-height: 1.45; }
+.project-text small { display: block; max-width: 360px; font-size: var(--font-body); line-height: 1.45; white-space: pre-line; }
 .project-images {
   display: block;
   column-count: 2;
@@ -276,10 +276,10 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 .product-media:hover .product-image-primary { opacity: 0; }
 .product-media:hover .product-image-secondary { opacity: 1; }
 .product p { margin: 10px 0 0; text-align: center; font-size: var(--font-small); }
-.order-panel { width: 100%; margin: clamp(70px, 9vw, 140px) 0 0; text-align: center; font-size: var(--font-body); }
-.order-panel-main { min-height: clamp(390px, 34vw, 520px); display: flex; align-items: center; flex-direction: column; justify-content: flex-start; padding: clamp(36px, 3.5vw, 54px) 20px clamp(72px, 8vw, 122px); }
+.order-panel { width: 100%; margin: 0; text-align: center; font-size: var(--font-body); }
+.order-panel-main { min-height: 0; display: flex; align-items: center; flex-direction: column; justify-content: flex-start; padding: 40px 20px; }
 .order-panel-main p { max-width: 920px; margin: 0 auto 30px; font-size: inherit; line-height: 1.25; }
-.order-pricing { margin-bottom: 2px; }
+.order-pricing { margin: 50px 0 2px; }
 .order-pricing p { margin-bottom: clamp(34px, 3.2vw, 50px); }
 .order-label { font-weight: 900; text-transform: uppercase; }
 .catalogue-link { display: inline-block; border-bottom: 2px solid currentColor; color: inherit; font-style: italic; font-weight: 900; line-height: .95; text-decoration: none; }
@@ -288,20 +288,37 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 .order-notice p { width: 100%; max-width: 980px; margin: 0; font-size: var(--font-body); font-weight: 600; line-height: 1.3; }
 .button { display: inline-block; border: 0; border-radius: 0; padding: 11px 27px; background: var(--olive); color: #fff; font: inherit; font-size: var(--font-body); text-decoration: none; }
 .section { padding: clamp(55px, 8vw, 120px) var(--nav-pad); }
-.section-title { text-align: center; margin-bottom: clamp(38px, 5vw, 70px); }
+.section-title {
+  width: min(88vw, 560px);
+  height: clamp(70px, 10vw, 135px);
+  margin: 0 auto clamp(38px, 5vw, 70px);
+  color: transparent;
+  font-size: 0;
+  text-align: center;
+  background: url('../images/header/SERVICES.png') center / contain no-repeat;
+}
 .service-grid { width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 5vw, 70px); }
 .contact-section { padding-top: clamp(48px, 5vw, 76px); padding-bottom: clamp(100px, 10vw, 150px); }
+.shop-page .contact-section { padding-bottom: 0; }
 .contact-grid { width: 100%; margin: 0 auto; display: grid; grid-template-columns: minmax(240px, .92fr) minmax(0, 2.25fr); gap: clamp(42px, 7vw, 108px); align-items: stretch; }
 .contact-details { display: flex; min-height: 510px; flex-direction: column; justify-content: flex-start; }
-.contact-details h2 { margin: 8px 0 0; font-size: var(--font-title); font-weight: 400; line-height: 1; }
+.contact-details h2 {
+  width: min(100%, 360px);
+  height: clamp(70px, 8vw, 118px);
+  margin: 8px 0 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  background: url('../images/header/CONTACT.png') left center / contain no-repeat;
+}
 .contact-details > div { margin: clamp(72px, 7vw, 105px) 0 0; }
 .contact-details p { margin: 0 0 28px; line-height: 1.25; }
 .contact-details a { color: inherit; text-decoration: none; }
-.contact-form { display: flex; flex-direction: column; gap: 13px; padding: 0; background: transparent; }
+.contact-form { display: flex; flex-direction: column; gap: 13px; margin-top: 30px; padding: 0; background: transparent; }
 .form-field { display: block; }
-.form-field label { display: block; margin-bottom: 7px; font-size: var(--font-small); line-height: 1; }
+.form-field label { display: block; margin-bottom: 7px; font-size: 18px; line-height: 1; }
 .name-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.contact-form input, .contact-form select, .contact-form textarea { display: block; width: 100%; min-height: 40px; border: 0; border-radius: 0; padding: 11px; background: #fff; color: var(--green); font: inherit; font-size: var(--font-small); }
+.contact-form input, .contact-form select, .contact-form textarea { display: block; width: 100%; min-height: 40px; border: 0; border-radius: 0; padding: 11px; background: #fff; color: var(--green); font: inherit; font-size: 18px; }
 .contact-form textarea { min-height: 168px; resize: vertical; }
 .contact-form .button { width: 100%; min-height: 40px; margin-top: -1px; padding-block: 7px; }
 
@@ -314,20 +331,21 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
 .styling-strip img { display: block; width: 100%; height: min(52vw, 680px); object-fit: cover; }
 
 /* Weddings */
-.weddings-content { min-height: calc(100vh - 82px); padding: 0 var(--nav-pad) clamp(70px, 8vw, 120px); text-align: center; }
-.weddings-content h1 { margin: 0; padding-top: clamp(4px, 1vw, 14px); font-size: var(--font-title); font-weight: 400; line-height: 1.1; }
-.weddings-content p { max-width: 920px; margin: clamp(42px, 3.6vw, 52px) auto clamp(36px, 3vw, 44px); line-height: 1.22; }
+.weddings-content { min-height: calc(100vh - 82px); padding: clamp(46px, 7vw, 105px) var(--nav-pad) clamp(70px, 8vw, 120px); text-align: center; }
+.weddings-content h1 { display: flex; width: auto; height: clamp(70px, 10vw, 135px); margin: 0 auto; align-items: center; justify-content: center; line-height: 0; }
+.weddings-content h1 img { display: block; width: auto; max-width: 88vw; height: 100%; object-fit: contain; }
+.weddings-content p { max-width: 920px; margin: clamp(42px, 3.6vw, 52px) auto clamp(86px, calc(3vw + 50px), 94px); line-height: 1.22; }
 .weddings-link { display: inline-block; border-bottom: 2px solid currentColor; color: inherit; font-style: italic; font-weight: 900; line-height: .95; text-decoration: none; }
 .weddings-image { display: block; width: min(24.4vw, 340px); margin: 0 auto; }
 .weddings-image img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
 
 /* Styling and curation */
-.styling-content { min-height: calc(100vh - 82px); padding: 0 var(--nav-pad) clamp(70px, 7vw, 105px); text-align: center; }
-.styling-content h1 { width: min(42vw, 560px); margin: 0 auto; padding-top: 0; line-height: 0; }
-.styling-content h1 img { display: block; width: 100%; height: clamp(82px, 10vw, 138px); object-fit: contain; }
+.styling-content { min-height: calc(100vh - 82px); padding: clamp(46px, 7vw, 105px) var(--nav-pad) clamp(70px, 7vw, 105px); text-align: center; }
+.styling-content h1 { display: flex; width: auto; height: clamp(70px, 10vw, 135px); margin: 0 auto; padding-top: 0; align-items: center; justify-content: center; line-height: 0; }
+.styling-content h1 img { display: block; width: auto; max-width: 88vw; height: 100%; object-fit: contain; }
 .styling-content header p { max-width: 980px; margin: clamp(40px, 3.7vw, 56px) auto 0; line-height: 1.22; }
 .styling-link { display: inline-block; border-bottom: 2px solid currentColor; color: inherit; font-style: italic; font-weight: 900; line-height: .95; text-decoration: none; }
-.styling-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: calc(100% - 28px); gap: clamp(8px, .75vw, 12px); margin: clamp(60px, 5.4vw, 82px) auto 0; }
+.styling-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: calc(100% - 28px); gap: clamp(8px, .75vw, 12px); margin: clamp(110px, calc(5.4vw + 50px), 132px) auto 0; }
 .styling-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 
 @media (max-width: 760px) {
@@ -342,20 +360,20 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
   .home-copy { position: static; width: 100%; margin: auto 0; transform: none; }
   .home-copy h1 { margin-bottom: 28px; }
   .home-copy p { font-size: var(--font-body); }
-  .home-categories { width: calc(100% - 32px); gap: 8px; padding: 34px 0 22px; }
+  .home-categories { width: calc(100% - 32px); gap: 8px; padding: 10px 0 0 !important; }
   .home-categories .category-card span { margin-top: 9px; }
-  .order-panel-main { min-height: 0; padding: 30px 20px 64px; }
+  .order-panel-main { min-height: 0; padding: 36px 20px; }
   .order-pricing p { margin-bottom: 30px; }
   .desktop-break { display: none; }
-  .weddings-content { min-height: 0; padding: 22px 20px 65px; }
+  .weddings-content { min-height: 0; padding: 46px 20px 65px; }
   .weddings-content h1 { padding-top: 0; }
-  .weddings-content p { margin: 45px auto 38px; }
+  .weddings-content p { margin: 45px auto 88px; }
   .weddings-image { width: min(78vw, 390px); }
-  .styling-content { min-height: 0; padding: 22px 20px 65px; }
-  .styling-content h1 { width: min(88vw, 500px); }
-  .styling-content h1 img { height: clamp(88px, 26vw, 130px); }
+  .styling-content { min-height: 0; padding: 46px 20px 65px; }
+  .styling-content h1 { width: auto; height: 70px; }
+  .styling-content h1 img { height: 100%; }
   .styling-content header p { margin-top: 40px; }
-  .styling-gallery { width: 100%; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 50px; }
+  .styling-gallery { width: 100%; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 100px; }
   .work-grid { width: calc(100% - (2 * var(--nav-pad))); }
   .work-pair, .work-stack { gap: 5px; }
   .work-card-5 { margin-block: 5px; }

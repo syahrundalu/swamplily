@@ -363,7 +363,7 @@ const ssMobileMenu = function() {
       ssMoveHeader();
       ssMobileMenu();
       ssScrollSpy();
-      ssSwiper();
+      if (typeof ssSwiper === 'function') ssSwiper();
       ssMailChimpForm();
       ssVideoLightbox();
       ssAlertBoxes();
@@ -374,7 +374,8 @@ const ssMobileMenu = function() {
 
 })(document.documentElement);
 
-document.getElementById('emailForm').addEventListener('submit', function(event) {
+const emailForm = document.getElementById('emailForm');
+if (emailForm) emailForm.addEventListener('submit', function(event) {
   var emailInput = document.getElementById('emailInput');
   if (!emailInput.value.includes('@')) {
       emailInput.setCustomValidity('Please include an "@" in the email address.');
