@@ -1,0 +1,29 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:OrangeSquashDemo-Regular
+FamilyName:Orange Squash Demo
+StyleName:Regular
+FullName:Orange Squash Demo Regular
+MenuName:Orange Squash Demo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\xampp\htdocs\Swamplily\Font\orangesquash.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:18548
+FileModTime:1764509980
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Orange Squash Demo Regular
+NameArray:0,Win,1,Orange Squash Demo
+%EndFont
+
