@@ -381,6 +381,24 @@ a:hover {
     justify-content: flex-end; /* Push content to the bottom */
     height: 120vh; /* Full viewport height */
   }
+
+  .banner .container.link-landing {
+    width: 100%;
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  .link-landing .row,
+  .link-landing ul {
+    width: 100%;
+  }
+
+  .link-landing .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
   
   /* Styling for the link-landing */
   .link-landing ul {
@@ -396,7 +414,7 @@ a:hover {
   
   .link-landing ul li {
     margin-right: 20px; /* Add space between items */
-    font-size: var(--font-display);
+    font-size: 24px;
   }
 
   .link-landing ul li a {

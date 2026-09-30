@@ -12,7 +12,7 @@ Array.from({length:8},(_,index)=>{
   const second=first+1;
   const article=document.createElement('article');
   article.className='product';
-  article.innerHTML=`<div class="product-media"><img class="product-image-primary" src="images/optimized/shop/${first}.webp" alt="Floral arrangement ${index+1}" loading="${index<2?'eager':'lazy'}" decoding="async"><img class="product-image-secondary" src="images/optimized/shop/${second}.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></div>`;
+  article.innerHTML=`<div class="product-media"><img class="product-image-primary" src="images/optimized/shop/${first}.webp${[9,11,13,15].includes(first)?'?v=20260930-1':''}" alt="Floral arrangement ${index+1}" loading="${index<2?'eager':'lazy'}" decoding="async"><img class="product-image-secondary" src="images/optimized/shop/${second}.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"></div>`;
   box.append(article);
 });
 </script><script src="js/preloader.js"></script></body></html>
