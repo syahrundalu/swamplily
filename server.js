@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "hello@swamplily.co.id",
+    user: "info@swampily.co.id",
     pass: process.env.SWAMPLILY_SMTP_PASSWORD,
   },
 });
@@ -25,9 +25,9 @@ app.post("/submit", async (req, res) => {
   const { firstName, lastName, email, serviceDate, service, message } = req.body;
 
   const mailOptions = {
-    from: "Swamp Lily Website <hello@swamplily.co.id>",
+    from: "Swamp Lily Website <info@swampily.co.id>",
     replyTo: email,
-    to: "hello@swamplily.co.id",
+    to: "info@swampily.co.id",
     subject: "New Service Request from Swamp Lily Contact Form",
     text: `
       Name: ${firstName} ${lastName}

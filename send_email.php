@@ -40,14 +40,14 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'hello@swamplily.co.id';
+    $mail->Username = 'info@swampily.co.id';
     $mail->Password = $smtpPassword;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
-    $mail->setFrom('hello@swamplily.co.id', 'Swamp Lily Website');
+    $mail->setFrom('info@swampily.co.id', 'Swamp Lily Website');
     $mail->addReplyTo($email, $fullName);
-    $mail->addAddress('hello@swamplily.co.id');
+    $mail->addAddress('info@swampily.co.id');
 
     $mail->isHTML(true);
     $mail->Subject = "New website enquiry from {$fullName}";
