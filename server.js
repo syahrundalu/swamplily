@@ -15,8 +15,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "info@swamplily.io", // Email Hostinger
-    pass: "Swamplily14!", // Password email
+    user: "hello@swamplily.co.id",
+    pass: process.env.SWAMPLILY_SMTP_PASSWORD,
   },
 });
 
@@ -25,8 +25,9 @@ app.post("/submit", async (req, res) => {
   const { firstName, lastName, email, serviceDate, service, message } = req.body;
 
   const mailOptions = {
-    from: "${email}",
-    to: "info@swamplily.io", // Email tujuan (dapat dikirim ke email yang sama atau lainnya)
+    from: "Swamp Lily Website <hello@swamplily.co.id>",
+    replyTo: email,
+    to: "hello@swamplily.co.id",
     subject: "New Service Request from Swamp Lily Contact Form",
     text: `
       Name: ${firstName} ${lastName}

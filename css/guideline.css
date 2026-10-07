@@ -404,3 +404,74 @@ body.guideline:not(.home-page) .site-footer { padding-inline: var(--nav-pad); }
   .styling-strip { grid-template-columns: 1fr 1fr; }
   .styling-strip img { height: 65vw; }
 }
+
+/* Work and project: iPad */
+@media (min-width: 761px) and (max-width: 1024px) {
+  .work-page .site-nav,
+  body:has(.project-layout) .site-nav { padding-inline: 32px; }
+  .work-grid { width: calc(100% - 64px); margin-top: 36px; margin-bottom: 72px; }
+  .project-layout { padding: 12px 32px 72px; }
+  .project-copy { grid-template-columns: 1fr; gap: 0; }
+  .project-text {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(180px, .7fr) minmax(0, 1.3fr);
+    gap: 20px 48px;
+    padding: 32px 0 48px;
+  }
+  .project-text h1 { grid-row: 1 / span 2; margin: 0; }
+  .project-text p { max-width: 620px; margin: 0; }
+  .project-text small { max-width: 620px; }
+  .work-page .home-footer,
+  body:has(.project-layout) .home-footer { margin-top: 80px; padding-inline: 32px; }
+}
+
+/* Work and project: mobile */
+@media (max-width: 760px) {
+  .work-page .site-nav,
+  body:has(.project-layout) .site-nav { padding-inline: 16px; }
+  .work-grid { width: calc(100% - 32px); margin: 24px auto 48px; }
+  .work-top,
+  .work-bottom { grid-template-columns: 1fr; gap: 6px; }
+  .work-stack { display: contents; }
+  .work-card-1,
+  .work-card-2,
+  .work-card-3,
+  .work-card-4,
+  .work-card-6,
+  .work-card-7 { aspect-ratio: 4 / 5; }
+  .work-card-5 { aspect-ratio: 3 / 2; margin-block: 6px; }
+  .work-card:hover img { transform: none; opacity: 1; }
+  .project-layout { padding: 0 16px 56px; }
+  .project-text { padding: 24px 0 38px; }
+  .project-text h1 { margin-bottom: 20px; }
+  .project-text p { margin-bottom: 28px; }
+  .project-gallery-featured,
+  .project-gallery-set-design,
+  .project-gallery-accessories,
+  .project-gallery-interior,
+  .project-gallery-pears,
+  .project-gallery-accounts,
+  .project-gallery-romantic {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .project-gallery-featured img,
+  .project-gallery-set-design img,
+  .project-gallery-accessories img,
+  .project-gallery-interior img,
+  .project-gallery-pears img,
+  .project-gallery-accounts img,
+  .project-gallery-romantic img {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+  .work-page .home-footer,
+  body:has(.project-layout) .home-footer { min-height: 88px; margin-top: 56px; padding-inline: 16px; }
+}
