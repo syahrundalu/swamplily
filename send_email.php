@@ -25,8 +25,27 @@ if ($firstName === '' || $email === false || $service === '' || $message === '')
     exit;
 }
 
-$smtpPassword = getenv('SWAMPLILY_SMTP_PASSWORD');
-if (!$smtpPassword) {
+$smtpConfigFile = dirname(__DIR__) . '/smtp-config.php';
+$smtpPassword = '';
+
+if (is_readable($smtpConfigFile)) {
+    try {
+        $smtpConfig = require $smtpConfigFile;
+
+        if (is_array($smtpConfig)) {
+            $smtpPassword = trim((string) ($smtpConfig['password'] ?? ''));
+        }
+    } catch (Throwable $exception) {
+        error_log('Swamp Lily SMTP configuration error: ' . $exception->getMessage());
+    }
+}
+
+// Keep environment-variable support for local development and other deployments.
+if ($smtpPassword === '') {
+    $smtpPassword = trim((string) getenv('SWAMPLILY_SMTP_PASSWORD'));
+}
+
+if ($smtpPassword === '') {
     http_response_code(500);
     echo json_encode(['status' => 'error', 'message' => 'Email service is not configured.']);
     exit;
@@ -40,14 +59,14 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'info@swampily.co.id';
+    $mail->Username = 'info@swamplily.co.id';
     $mail->Password = $smtpPassword;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
-    $mail->setFrom('info@swampily.co.id', 'Swamp Lily Website');
+    $mail->setFrom('info@swamplily.co.id', 'Swamp Lily Website');
     $mail->addReplyTo($email, $fullName);
-    $mail->addAddress('info@swampily.co.id');
+    $mail->addAddress('info@swamplily.co.id');
 
     $mail->isHTML(true);
     $mail->Subject = "New website enquiry from {$fullName}";
